@@ -58,6 +58,8 @@ fun ExploreScreen(
             item {
                 uiState.popularMovies?.takeIf { it.isNotEmpty() }?.let { popularMovies ->
                     PaginationListContent(
+                        title = "Popular",
+                        subtitle = "Movies",
                         list = popularMovies,
                         onItemClick = { id -> onMovieDetailClicked(id) },
                         pagination = { exploreScreenViewModel.onEvent(ExploreScreenEvent.LoadPopularMovies) }
