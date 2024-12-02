@@ -21,12 +21,14 @@ import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
+import com.nsicyber.wciwapp.R
 import com.nsicyber.wciwapp.common.Constants
 import com.nsicyber.wciwapp.common.Constants.IMAGE_URL
 import com.nsicyber.wciwapp.formatDate
@@ -97,7 +99,7 @@ fun MovieDetailScreen(
                     )
                 ) {
                     Text(
-                        text = "About Movie",
+                        text = stringResource(R.string.about_movie),
                         color = Color.Gray,
                         fontSize = 22.sp,
                         textAlign = TextAlign.Start,
@@ -139,7 +141,7 @@ fun MovieDetailScreen(
                     )
                 ) {
                     Text(
-                        text = "Release Date",
+                        text = stringResource(R.string.release_date),
                         color = Color.Gray,
                         fontSize = 22.sp,
                         textAlign = TextAlign.Start,
@@ -167,7 +169,7 @@ fun MovieDetailScreen(
             item {
                 movieDetailScreenState.images?.takeIf { it.isNotEmpty() }?.let {
                     ImagesListContent(
-                        title = "Images",
+                        title = stringResource(R.string.images),
                         list = movieDetailScreenState.images,
                     )
                 }
@@ -204,8 +206,8 @@ fun MovieDetailScreen(
 
             item {
                 movieDetailScreenState.similars?.takeIf { it.isNotEmpty() }?.let {
-                    PaginationListContent(title = "Similar",
-                        subtitle = "Movies",
+                    PaginationListContent(title = stringResource(R.string.similar),
+                        subtitle = stringResource(R.string.movies),
                         rowCount = 1,
                         list = movieDetailScreenState.similars,
                         onItemClick = { id ->

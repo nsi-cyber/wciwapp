@@ -7,10 +7,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.nsicyber.wciwapp.R
 import com.nsicyber.wciwapp.data.remote.response.genreKeywordList.Genre
 
 @Composable
@@ -21,7 +23,7 @@ fun GenreContent(genres: List<Genre?>){
         )
     ) {
         Text(
-            text = "Genre",
+            text = stringResource(R.string.genre),
             color = Color.Gray,
             fontSize = 22.sp,
             textAlign = TextAlign.Start,

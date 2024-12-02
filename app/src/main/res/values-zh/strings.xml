@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">WCIW</string>
+    <string name="mild">轻微</string>
+    <string name="moderate">中等</string>
+    <string name="none">无</string>
+    <string name="severe">严重</string>
+    <string name="frightening_intense_scenes"><![CDATA[惊悚 & 强烈场景]]></string>
+    <string name="alcohol_drugs_smoking"><![CDATA[酒精, 毒品 & 吸烟]]></string>
+    <string name="sex_nudity"><![CDATA[性 & 裸露]]></string>
+    <string name="violence_gore"><![CDATA[暴力 & 血腥]]></string>
+    <string name="profanity">粗话</string>
+    <string name="please_wait">请稍候...</string>
+    <string name="cast">演员表</string>
+    <string name="crew">工作人员</string>
+    <string name="no_result_to_show">无可显示结果...</string>
+    <string name="movie">电影</string>
+    <string name="tv_show">电视剧</string>
+    <string name="genre">类型</string>
+    <string name="discover_movies_shows"><![CDATA[发现电影 & 电视剧...]]></string>
+    <string name="about_movie">关于电影</string>
+    <string name="release_date">上映日期</string>
+    <string name="movies">电影</string>
+    <string name="similar">相似</string>
+    <string name="providers">提供商</string>
+    <string name="all">全部</string>
+    <string name="seasons">季数</string>
+    <string name="comments">评论</string>
+    <string name="parent">家长</string>
+    <string name="guide">指南</string>
+    <string name="about_show">关于电视剧</string>
+    <string name="episode">第 %1$s 集: %2$s</string>
+    <string name="episodes">剧集 (%1$s)</string>
+    <string name="season">季</string>
+    <string name="popular">热门</string>
+    <string name="top_10_shows">前10名电视剧</string>
+    <string name="this_week">本周</string>
+    <string name="top_10_movies">前10名电影</string>
+    <string name="of_all_time">有史以来</string>
+    <string name="on_the_air">正在播出</string>
+    <string name="now_playing">正在上映</string>
+    <string name="shows">节目</string>
+    <string name="images">图片</string>
+
+</resources>

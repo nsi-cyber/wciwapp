@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">WCIW</string>
+    <string name="mild">Легкий</string>
+    <string name="moderate">Умеренный</string>
+    <string name="none">Нет</string>
+    <string name="severe">Серьезный</string>
+    <string name="frightening_intense_scenes"><![CDATA[Пугающие и Интенсивные Сцены]]></string>
+    <string name="alcohol_drugs_smoking"><![CDATA[Алкоголь, Наркотики и Курение]]></string>
+    <string name="sex_nudity"><![CDATA[Секс и Нагота]]></string>
+    <string name="violence_gore"><![CDATA[Насилие и Кровь]]></string>
+    <string name="profanity">Ненормативная Лексика</string>
+    <string name="please_wait">Пожалуйста, подождите...</string>
+    <string name="cast">Актеры</string>
+    <string name="crew">Съемочная группа</string>
+    <string name="no_result_to_show">Нет результатов для отображения...</string>
+    <string name="movie">Фильм</string>
+    <string name="tv_show">Телешоу</string>
+    <string name="genre">Жанр</string>
+    <string name="discover_movies_shows"><![CDATA[Открывайте Фильмы и Шоу...]]></string>
+    <string name="about_movie">О Фильме</string>
+    <string name="release_date">Дата Выхода</string>
+    <string name="movies">Фильмы</string>
+    <string name="similar">Похожие</string>
+    <string name="providers">Поставщики</string>
+    <string name="all">Все</string>
+    <string name="seasons">Сезоны</string>
+    <string name="comments">Комментарии</string>
+    <string name="parent">Родитель</string>
+    <string name="guide">Руководство</string>
+    <string name="about_show">О Шоу</string>
+    <string name="episode">Эпизод %1$s: %2$s</string>
+    <string name="episodes">Эпизоды (%1$s)</string>
+    <string name="season">Сезон</string>
+    <string name="popular">Популярное</string>
+    <string name="top_10_shows">Топ 10 Сериалов</string>
+    <string name="this_week">На этой неделе</string>
+    <string name="top_10_movies">Топ 10 Фильмов</string>
+    <string name="of_all_time">Всех Времен</string>
+    <string name="on_the_air">В Эфире</string>
+    <string name="now_playing">Сейчас в Прокате</string>
+    <string name="shows">Шоу</string>
+    <string name="images">Изображения</string>
+
+</resources>

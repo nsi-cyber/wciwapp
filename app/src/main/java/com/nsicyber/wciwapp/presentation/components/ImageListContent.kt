@@ -29,6 +29,10 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.nsicyber.wciwapp.common.Constants
 import com.nsicyber.wciwapp.data.remote.response.imageList.ImageListResponseItem
+import net.engawapg.lib.zoomable.ScrollGesturePropagation
+import net.engawapg.lib.zoomable.rememberZoomState
+import net.engawapg.lib.zoomable.toggleScale
+import net.engawapg.lib.zoomable.zoomable
 
 
 @Composable
@@ -76,6 +80,7 @@ fun ImageCard(
     modifier: Modifier = Modifier,
     image: ImageListResponseItem? = null, onItemClick: (image: ImageListResponseItem?) -> Unit = {}
 ) {
+    val zoomState = rememberZoomState()
 
     Box(
         contentAlignment = Alignment.Center,
@@ -96,9 +101,13 @@ fun ImageCard(
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color(0xFFB8B5B5))
-                .clickable {
-                    onItemClick(image)
-                },
+                .zoomable(
+                    enableOneFingerZoom = false,
+                    zoomState = zoomState,
+                    onDoubleTap = { position -> zoomState.toggleScale(5.0f, position) }
+
+                )
+            ,
             contentScale = ContentScale.Fit,
         )
 

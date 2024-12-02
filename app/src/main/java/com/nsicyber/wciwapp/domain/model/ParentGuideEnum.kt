@@ -1,6 +1,8 @@
 package com.nsicyber.wciwapp.domain.model
 
+import android.content.Context
 import androidx.compose.ui.graphics.Color
+import com.nsicyber.wciwapp.R
 import com.nsicyber.wciwapp.ui.theme.MildColor
 import com.nsicyber.wciwapp.ui.theme.ModerateColor
 import com.nsicyber.wciwapp.ui.theme.NoneColor
@@ -34,12 +36,12 @@ fun String.toParentGuideSeverityType(): ParentGuideSeverityType? {
 }
 
 
-fun ParentGuideSeverityType.toText(): String? {
+fun ParentGuideSeverityType.toText(context:Context): String? {
     return when (this) {
-        ParentGuideSeverityType.MILD -> "Mild"
-        ParentGuideSeverityType.MODERATE -> "Moderate"
-        ParentGuideSeverityType.NONE -> "None"
-        ParentGuideSeverityType.SEVERE -> "Severe"
+        ParentGuideSeverityType.MILD -> context.getString(R.string.mild)
+        ParentGuideSeverityType.MODERATE -> context.getString(R.string.moderate)
+        ParentGuideSeverityType.NONE -> context.getString(R.string.none)
+        ParentGuideSeverityType.SEVERE -> context.getString(R.string.severe)
         else -> null
     }
 }
@@ -59,13 +61,13 @@ fun String.toParentGuideCategoryType(): ParentGuideCategoryType? {
     }
 }
 
-fun ParentGuideCategoryType.toText(): String? {
+fun ParentGuideCategoryType.toText(context:Context): String? {
     return when (this) {
-        ParentGuideCategoryType.FRIGHTENING -> "Frightening & Intense Scenes"
-        ParentGuideCategoryType.ALCOHOL -> "Alcohol, Drugs & Smoking"
-        ParentGuideCategoryType.NUDITY -> "Sex & Nudity"
-        ParentGuideCategoryType.VIOLENCE -> "Violence & Gore"
-        ParentGuideCategoryType.PROFANITY -> "Profanity"
+        ParentGuideCategoryType.FRIGHTENING -> context.getString(R.string.frightening_intense_scenes)
+        ParentGuideCategoryType.ALCOHOL -> context.getString(R.string.alcohol_drugs_smoking)
+        ParentGuideCategoryType.NUDITY -> context.getString(R.string.sex_nudity)
+        ParentGuideCategoryType.VIOLENCE -> context.getString(R.string.violence_gore)
+        ParentGuideCategoryType.PROFANITY -> context.getString(R.string.profanity)
         else -> null
     }
 }

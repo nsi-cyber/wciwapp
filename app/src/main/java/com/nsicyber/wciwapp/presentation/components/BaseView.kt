@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -93,7 +94,7 @@ fun LoadingScreen() {
                     modifier = Modifier.size(200.dp)
                 )
                 Text(
-                    text = "Please wait...",
+                    text = stringResource(R.string.please_wait),
                     color = Color.Gray,
                     fontSize = 22.sp,
                     textAlign = TextAlign.Start,

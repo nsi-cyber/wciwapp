@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">WCIW</string>
+    <string name="mild">軽度</string>
+    <string name="moderate">中程度</string>
+    <string name="none">なし</string>
+    <string name="severe">深刻</string>
+    <string name="frightening_intense_scenes"><![CDATA[恐ろしい＆激しいシーン]]></string>
+    <string name="alcohol_drugs_smoking"><![CDATA[アルコール、ドラッグ＆喫煙]]></string>
+    <string name="sex_nudity"><![CDATA[セックス＆ヌード]]></string>
+    <string name="violence_gore"><![CDATA[暴力＆流血]]></string>
+    <string name="profanity">冒涜</string>
+    <string name="please_wait">お待ちください...</string>
+    <string name="cast">キャスト</string>
+    <string name="crew">スタッフ</string>
+    <string name="no_result_to_show">表示する結果がありません...</string>
+    <string name="movie">映画</string>
+    <string name="tv_show">テレビ番組</string>
+    <string name="genre">ジャンル</string>
+    <string name="discover_movies_shows"><![CDATA[映画と番組を見つける...]]></string>
+    <string name="about_movie">映画について</string>
+    <string name="release_date">公開日</string>
+    <string name="movies">映画</string>
+    <string name="similar">類似</string>
+    <string name="providers">プロバイダー</string>
+    <string name="all">すべて</string>
+    <string name="seasons">シーズン</string>
+    <string name="comments">コメント</string>
+    <string name="parent">親</string>
+    <string name="guide">ガイド</string>
+    <string name="about_show">番組について</string>
+    <string name="episode">エピソード %1$s: %2$s</string>
+    <string name="episodes">エピソード (%1$s)</string>
+    <string name="season">シーズン</string>
+    <string name="popular">人気</string>
+    <string name="top_10_shows">トップ10 ショー</string>
+    <string name="this_week">今週</string>
+    <string name="top_10_movies">トップ10 映画</string>
+    <string name="of_all_time">歴代</string>
+    <string name="on_the_air">放送中</string>
+    <string name="now_playing">上映中</string>
+    <string name="shows">番組</string>
+    <string name="images">画像</string>
+
+</resources>

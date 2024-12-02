@@ -1,0 +1,45 @@
+
+<resources>
+    <string name="app_name">WCIW</string>
+    <string name="mild">Hafif</string>
+    <string name="moderate">Orta</string>
+    <string name="none">Yok</string>
+    <string name="severe">Şiddetli</string>
+    <string name="frightening_intense_scenes"><![CDATA[Korkutucu & Yoğun Sahneler]]></string>
+    <string name="alcohol_drugs_smoking"><![CDATA[Alkol, Uyuşturucu & Sigara]]></string>
+    <string name="sex_nudity"><![CDATA[Cinsellik & Çıplaklık]]></string>
+    <string name="violence_gore"><![CDATA[Şiddet & Kan]]></string>
+    <string name="profanity">Küfür</string>
+    <string name="please_wait">Lütfen bekleyin...</string>
+    <string name="cast">Oyuncular</string>
+    <string name="crew">Ekip</string>
+    <string name="no_result_to_show">Gösterilecek sonuç yok...</string>
+    <string name="movie">Film</string>
+    <string name="tv_show">Dizi</string>
+    <string name="genre">Tür</string>
+    <string name="discover_movies_shows"><![CDATA[Filmleri ve Dizileri Keşfedin...]]></string>
+    <string name="about_movie">Film Hakkında</string>
+    <string name="release_date">Çıkış Tarihi</string>
+    <string name="movies">Filmler</string>
+    <string name="similar">Benzer</string>
+    <string name="providers">Sağlayıcılar</string>
+    <string name="all">Tümü</string>
+    <string name="seasons">Sezonlar</string>
+    <string name="comments">Yorumlar</string>
+    <string name="parent">Ebeveyn</string>
+    <string name="guide">Rehber</string>
+    <string name="about_show">Dizi Hakkında</string>
+    <string name="episode">Bölüm %1$s: %2$s</string>
+    <string name="episodes">Bölümler (%1$s)</string>
+    <string name="season">Sezon</string>
+    <string name="popular">Popüler</string>
+    <string name="top_10_shows">En İyi 10 Dizi</string>
+    <string name="this_week">Bu Hafta</string>
+    <string name="top_10_movies">En İyi 10 Film</string>
+    <string name="of_all_time">Tüm Zamanların</string>
+    <string name="on_the_air">Yayında</string>
+    <string name="now_playing">Şimdi Gösterimde</string>
+    <string name="shows">Diziler</string>
+    <string name="images">Görseller</string>
+
+</resources>

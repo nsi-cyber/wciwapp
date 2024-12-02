@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">WCIW</string>
+    <string name="mild">Leve</string>
+    <string name="moderate">Moderado</string>
+    <string name="none">Ninguno</string>
+    <string name="severe">Grave</string>
+    <string name="frightening_intense_scenes"><![CDATA[Escenas Aterradoras & Intensas]]></string>
+    <string name="alcohol_drugs_smoking"><![CDATA[Alcohol, Drogas & Tabaco]]></string>
+    <string name="sex_nudity"><![CDATA[Sexo & Desnudez]]></string>
+    <string name="violence_gore"><![CDATA[Violencia & Sangre]]></string>
+    <string name="profanity">Profanidad</string>
+    <string name="please_wait">Por favor espera...</string>
+    <string name="cast">Elenco</string>
+    <string name="crew">Equipo</string>
+    <string name="no_result_to_show">No hay resultados para mostrar...</string>
+    <string name="movie">Película</string>
+    <string name="tv_show">Serie</string>
+    <string name="genre">Género</string>
+    <string name="discover_movies_shows"><![CDATA[Descubre Películas & Series...]]></string>
+    <string name="about_movie">Sobre la Película</string>
+    <string name="release_date">Fecha de Estreno</string>
+    <string name="movies">Películas</string>
+    <string name="similar">Similar</string>
+    <string name="providers">Proveedores</string>
+    <string name="all">Todo</string>
+    <string name="seasons">Temporadas</string>
+    <string name="comments">Comentarios</string>
+    <string name="parent">Padre</string>
+    <string name="guide">Guía</string>
+    <string name="about_show">Sobre la Serie</string>
+    <string name="episode">Episodio %1$s: %2$s</string>
+    <string name="episodes">Episodios (%1$s)</string>
+    <string name="season">Temporada</string>
+    <string name="popular">Popular</string>
+    <string name="top_10_shows">Top 10 Series</string>
+    <string name="this_week">Esta Semana</string>
+    <string name="top_10_movies">Top 10 Películas</string>
+    <string name="of_all_time">De Todos los Tiempos</string>
+    <string name="on_the_air">En el Aire</string>
+    <string name="now_playing">En Cartelera</string>
+    <string name="shows">Series</string>
+    <string name="images">Imágenes</string>
+
+</resources>

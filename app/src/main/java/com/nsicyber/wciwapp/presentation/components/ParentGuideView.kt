@@ -30,11 +30,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.nsicyber.wciwapp.R
 import com.nsicyber.wciwapp.domain.model.ParentalGuideCategoryItem
 import com.nsicyber.wciwapp.domain.model.ParentalGuideCategoryList
 import com.nsicyber.wciwapp.domain.model.toColor
@@ -45,6 +48,7 @@ import com.nsicyber.wciwapp.domain.model.toText
 fun ParentGuideListItemView(
     data: ParentalGuideCategoryItem
 ) {
+    val context= LocalContext.current
     val isSelected = remember { mutableStateOf(false) }
     val rotationAngle by animateFloatAsState(
         targetValue = if (isSelected.value) 180f else 0f,
@@ -82,7 +86,7 @@ fun ParentGuideListItemView(
                     )
                     Column {
                         Text(
-                            text = data.categoryType?.toText().toString(),
+                            text = data.categoryType?.toText(context).toString(),
                             color = Color.White,
                             fontSize = 22.sp,
                             textAlign = TextAlign.Start,
@@ -90,7 +94,7 @@ fun ParentGuideListItemView(
                         )
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Text(
-                                text = data.severityType?.toText().toString(),
+                                text = data.severityType?.toText(context).toString(),
                                 color = Color.Gray,
                                 fontSize = 16.sp,
                                 textAlign = TextAlign.Start,
@@ -111,7 +115,7 @@ fun ParentGuideListItemView(
                                         .weight(1f)
                                 )
                                 Text(
-                                    text = "Comments",
+                                    text = stringResource(R.string.comments),
                                     color = Color.Gray,
                                     fontSize = 14.sp,
                                     textAlign = TextAlign.Start,
@@ -181,7 +185,7 @@ fun ParentGuideView(data: ParentalGuideCategoryList = ParentalGuideCategoryList(
             )
         ) {
             Text(
-                text = "Parent",
+                text = stringResource(R.string.parent),
                 color = Color.Gray,
                 fontSize = 22.sp,
                 textAlign = TextAlign.Start,
@@ -190,7 +194,7 @@ fun ParentGuideView(data: ParentalGuideCategoryList = ParentalGuideCategoryList(
             )
             Text(
                 lineHeight = 30.sp,
-                text = "Guide",
+                text = stringResource(R.string.guide),
                 color = Color.White,
                 fontSize = 28.sp,
                 textAlign = TextAlign.Start,

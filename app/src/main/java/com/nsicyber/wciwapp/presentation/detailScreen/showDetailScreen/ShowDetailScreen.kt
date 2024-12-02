@@ -43,12 +43,14 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
+import com.nsicyber.wciwapp.R
 import com.nsicyber.wciwapp.common.Constants
 import com.nsicyber.wciwapp.common.Constants.IMAGE_URL
 import com.nsicyber.wciwapp.formatDate
@@ -122,7 +124,7 @@ fun ShowDetailScreen(
                     )
                 ) {
                     Text(
-                        text = "About Show",
+                        text = stringResource(R.string.about_show),
                         color = Color.Gray,
                         fontSize = 22.sp,
                         textAlign = TextAlign.Start,
@@ -166,7 +168,7 @@ fun ShowDetailScreen(
                     )
                 ) {
                     Text(
-                        text = "Release Date",
+                        text = stringResource(R.string.release_date),
                         color = Color.Gray,
                         fontSize = 22.sp,
                         textAlign = TextAlign.Start,
@@ -195,7 +197,7 @@ fun ShowDetailScreen(
             item {
                 showDetailScreenState.images?.takeIf { it.isNotEmpty() }?.let {
                     ImagesListContent(
-                        title = "Images",
+                        title = stringResource(R.string.images),
                         list = showDetailScreenState.images,
                     )
                 }
@@ -246,7 +248,7 @@ fun ShowDetailScreen(
 
             item {
                 showDetailScreenState.similars?.takeIf { it.isNotEmpty() }?.let {
-                    PaginationListContent(title = "Similar", subtitle = "Shows", rowCount = 1,
+                    PaginationListContent(title = stringResource(R.string.similar), subtitle = stringResource(R.string.shows), rowCount = 1,
                         list = showDetailScreenState.similars,
                         onItemClick = { id ->
                             onShowDetailClicked(id)
@@ -279,7 +281,7 @@ fun SeasonDetailView(
     Column(modifier = Modifier.padding(bottom = 16.dp)) {
         Column(modifier = Modifier.padding(start = 16.dp, top = 16.dp)) {
             Text(
-                text = "All",
+                text = stringResource(R.string.all),
                 color = Color.Gray,
                 fontSize = 22.sp,
                 textAlign = TextAlign.Start,
@@ -287,7 +289,7 @@ fun SeasonDetailView(
                 modifier = Modifier.fillMaxWidth()
             )
             Text(
-                text = "Seasons",
+                text = stringResource(R.string.seasons),
                 color = Color.White,
                 fontSize = 28.sp,
                 textAlign = TextAlign.Start,
@@ -353,7 +355,7 @@ fun SeasonCard(
             modifier = Modifier.padding(8.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(text = "Season", color = Color.White)
+            Text(text = stringResource(R.string.season), color = Color.White)
             Text(
                 text = "$seasonNumber",
                 fontSize = 24.sp,
@@ -397,7 +399,7 @@ fun SeasonDetailContent(
                 .padding(vertical = 4.dp)
         ) {
             Text(
-                text = "Episodes (${seasonData?.episodes?.size ?: 0})",
+                text = stringResource(R.string.episodes, seasonData?.episodes?.size ?: 0),
                 color = Color.White,
                 fontSize = 28.sp,
                 fontWeight = FontWeight.Bold,
@@ -445,7 +447,7 @@ fun EpisodeListItemView(
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
-                text = "Episode $count: ${data?.episodeName}",
+                text = stringResource(R.string.episode, count, data?.episodeName?:""),
                 modifier = Modifier.weight(1f),
                 color = Color.White
             )

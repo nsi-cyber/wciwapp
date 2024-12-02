@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">WCIW</string>
+    <string name="mild">Léger</string>
+    <string name="moderate">Modéré</string>
+    <string name="none">Aucun</string>
+    <string name="severe">Grave</string>
+    <string name="frightening_intense_scenes"><![CDATA[Scènes Effrayantes & Intenses]]></string>
+    <string name="alcohol_drugs_smoking"><![CDATA[Alcool, Drogues & Tabac]]></string>
+    <string name="sex_nudity"><![CDATA[Sexe & Nudité]]></string>
+    <string name="violence_gore"><![CDATA[Violence & Sang]]></string>
+    <string name="profanity">Grossièretés</string>
+    <string name="please_wait">Veuillez patienter...</string>
+    <string name="cast">Casting</string>
+    <string name="crew">Équipe</string>
+    <string name="no_result_to_show">Aucun résultat à afficher...</string>
+    <string name="movie">Film</string>
+    <string name="tv_show">Série</string>
+    <string name="genre">Genre</string>
+    <string name="discover_movies_shows"><![CDATA[Découvrez des Films & Séries...]]></string>
+    <string name="about_movie">À Propos du Film</string>
+    <string name="release_date">Date de Sortie</string>
+    <string name="movies">Films</string>
+    <string name="similar">Similaire</string>
+    <string name="providers">Fournisseurs</string>
+    <string name="all">Tout</string>
+    <string name="seasons">Saisons</string>
+    <string name="comments">Commentaires</string>
+    <string name="parent">Parent</string>
+    <string name="guide">Guide</string>
+    <string name="about_show">À Propos de la Série</string>
+    <string name="episode">Épisode %1$s : %2$s</string>
+    <string name="episodes">Épisodes (%1$s)</string>
+    <string name="season">Saison</string>
+    <string name="popular">Populaire</string>
+    <string name="top_10_shows">Top 10 Séries</string>
+    <string name="this_week">Cette Semaine</string>
+    <string name="top_10_movies">Top 10 Films</string>
+    <string name="of_all_time">De Tous les Temps</string>
+    <string name="on_the_air">À l\'Antenne</string>
+    <string name="now_playing">En Salle</string>
+    <string name="shows">Séries</string>
+    <string name="images">Images</string>
+
+</resources>

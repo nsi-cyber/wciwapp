@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">WCIW</string>
+    <string name="mild">हल्का</string>
+    <string name="moderate">मध्यम</string>
+    <string name="none">कोई नहीं</string>
+    <string name="severe">गंभीर</string>
+    <string name="frightening_intense_scenes"><![CDATA[डरावने और तीव्र दृश्य]]></string>
+    <string name="alcohol_drugs_smoking"><![CDATA[शराब, ड्रग्स और धूम्रपान]]></string>
+    <string name="sex_nudity"><![CDATA[यौन और नग्नता]]></string>
+    <string name="violence_gore"><![CDATA[हिंसा और खूनखराबा]]></string>
+    <string name="profanity">अश्लीलता</string>
+    <string name="please_wait">कृपया प्रतीक्षा करें...</string>
+    <string name="cast">कलाकार</string>
+    <string name="crew">क्रू</string>
+    <string name="no_result_to_show">दिखाने के लिए कोई परिणाम नहीं...</string>
+    <string name="movie">फिल्म</string>
+    <string name="tv_show">टीवी शो</string>
+    <string name="genre">शैली</string>
+    <string name="discover_movies_shows"><![CDATA[फिल्में और शो खोजें...]]></string>
+    <string name="about_movie">फिल्म के बारे में</string>
+    <string name="release_date">रिलीज़ की तारीख</string>
+    <string name="movies">फिल्में</string>
+    <string name="similar">समान</string>
+    <string name="providers">प्रदाता</string>
+    <string name="all">सभी</string>
+    <string name="seasons">सीजन</string>
+    <string name="comments">टिप्पणियां</string>
+    <string name="parent">माता-पिता</string>
+    <string name="guide">मार्गदर्शक</string>
+    <string name="about_show">शो के बारे में</string>
+    <string name="episode">एपिसोड %1$s: %2$s</string>
+    <string name="episodes">एपिसोड (%1$s)</string>
+    <string name="season">सीजन</string>
+    <string name="popular">लोकप्रिय</string>
+    <string name="top_10_shows">शीर्ष 10 शो</string>
+    <string name="this_week">इस सप्ताह</string>
+    <string name="top_10_movies">शीर्ष 10 फ़िल्में</string>
+    <string name="of_all_time">सभी समय के</string>
+    <string name="on_the_air">प्रसारित</string>
+    <string name="now_playing">अब चल रहा है</string>
+    <string name="shows">शो</string>
+    <string name="images">चित्र</string>
+
+</resources>

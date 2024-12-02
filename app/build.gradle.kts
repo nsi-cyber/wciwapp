@@ -105,6 +105,7 @@ dependencies {
     implementation(kotlin("reflect"))
     implementation("org.jsoup:jsoup:1.12.1")
     implementation("com.orhanobut:hawk:2.0.1")
+    implementation("net.engawapg.lib:zoomable:1.6.2")
 
 
 }

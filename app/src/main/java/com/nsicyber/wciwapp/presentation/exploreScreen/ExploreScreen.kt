@@ -9,8 +9,10 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.nsicyber.wciwapp.R
 import com.nsicyber.wciwapp.presentation.components.BaseView
 import com.nsicyber.wciwapp.presentation.components.PaginationListContent
 import com.nsicyber.wciwapp.presentation.components.RankedListContent
@@ -58,8 +60,8 @@ fun ExploreScreen(
             item {
                 uiState.popularMovies?.takeIf { it.isNotEmpty() }?.let { popularMovies ->
                     PaginationListContent(
-                        title = "Popular",
-                        subtitle = "Movies",
+                        title = stringResource(R.string.popular),
+                        subtitle = stringResource(R.string.movies),
                         list = popularMovies,
                         onItemClick = { id -> onMovieDetailClicked(id) },
                         pagination = { exploreScreenViewModel.onEvent(ExploreScreenEvent.LoadPopularMovies) }
@@ -72,8 +74,8 @@ fun ExploreScreen(
             item {
                 uiState.topRatedShows?.takeIf { it.isNotEmpty() }?.let { topRatedShows ->
                     RankedListContent(
-                        title = "Top 10 Shows",
-                        subtitle = "This Week",
+                        title = stringResource(R.string.top_10_shows),
+                        subtitle = stringResource(R.string.this_week),
                         list = topRatedShows,
                         onItemClick = { id -> onShowDetailClicked(id) }
                     )
@@ -84,8 +86,8 @@ fun ExploreScreen(
             item {
                 uiState.topRatedMovies?.takeIf { it.isNotEmpty() }?.let { topRatedMovies ->
                     RankedListContent(
-                        title = "Top 10 Movies",
-                        subtitle = "of All Time",
+                        title = stringResource(R.string.top_10_movies),
+                        subtitle = stringResource(R.string.of_all_time),
                         list = topRatedMovies,
                         onItemClick = { id -> onMovieDetailClicked(id) }
                     )

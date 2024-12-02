@@ -43,6 +43,7 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -50,6 +51,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
+import com.nsicyber.wciwapp.R
 import com.nsicyber.wciwapp.common.Constants
 import com.nsicyber.wciwapp.data.remote.response.genreKeywordList.Genre
 import com.nsicyber.wciwapp.domain.model.CardViewData
@@ -130,7 +132,7 @@ fun SearchScreen(
 
                         uiState.movieNowPlayingList?.takeIf { it.isNotEmpty() }
                             ?.let { popularMovies ->
-                                PaginationListContent(title = "Now Playing", subtitle = "Movies",
+                                PaginationListContent(title = stringResource(R.string.now_playing), subtitle = stringResource(R.string.movies),
                                     list = popularMovies,
                                     onItemClick = { id -> onMovieDetailClicked(id) },
                                     pagination = { searchScreenViewModel.onEvent(SearchScreenEvent.GetMovieNowPlayingList) }
@@ -141,7 +143,9 @@ fun SearchScreen(
                         Spacer(modifier = Modifier.height(16.dp))
 
                         uiState.showOnAirList?.takeIf { it.isNotEmpty() }?.let { popularMovies ->
-                            PaginationListContent(title = "On The Air", subtitle = "Shows",
+                            PaginationListContent(title = stringResource(R.string.on_the_air), subtitle = stringResource(
+                                R.string.shows
+                            ),
                                 list = popularMovies,
                                 onItemClick = { id -> onShowDetailClicked(id) },
                                 pagination = { searchScreenViewModel.onEvent(SearchScreenEvent.GetShowOnAirList) }
@@ -191,7 +195,7 @@ fun SearchInputField(
                 maxLines = 1,
                 placeholder = {
                     Text(
-                        text = "Discover Movies & Shows...",
+                        text = stringResource(R.string.discover_movies_shows),
                         color = Color.Black,
                         fontSize = 18.sp,
                         textAlign = TextAlign.Start,
@@ -272,7 +276,9 @@ fun SearchCard(
                 fontWeight = FontWeight.Medium,
             )
             Text(
-                text = if (data?.media_type == "movie") "Movie" else "Tv Show",
+                text = if (data?.media_type == "movie") stringResource(R.string.movie) else stringResource(
+                    R.string.tv_show
+                ),
                 color = Color.Gray,
                 fontSize = 12.sp,
                 maxLines = 2,
@@ -309,7 +315,7 @@ fun NotFoundCard() {
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "No result to show...",
+                text = stringResource(R.string.no_result_to_show),
                 color = Color.White,
                 fontSize = 18.sp,
                 textAlign = TextAlign.Start,

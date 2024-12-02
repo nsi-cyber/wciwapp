@@ -22,12 +22,14 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import com.nsicyber.wciwapp.R
 import com.nsicyber.wciwapp.common.Constants.IMAGE_URL_PROFILE
 import com.nsicyber.wciwapp.data.remote.response.creditsList.Cast
 
@@ -40,7 +42,7 @@ fun CastListContent(
     Column {
         Column(modifier = Modifier.padding(start = 16.dp, top = 16.dp, bottom = 8.dp)) {
             Text(
-                text = "Cast",
+                text = stringResource(R.string.cast),
                 color = Color.White,
                 fontSize = 28.sp,
                 textAlign = TextAlign.Start,

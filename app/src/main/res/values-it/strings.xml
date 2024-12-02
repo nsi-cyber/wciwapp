@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">WCIW</string>
+    <string name="mild">Leggero</string>
+    <string name="moderate">Moderato</string>
+    <string name="none">Nessuno</string>
+    <string name="severe">Grave</string>
+    <string name="frightening_intense_scenes"><![CDATA[Scene Spaventose & Intense]]></string>
+    <string name="alcohol_drugs_smoking"><![CDATA[Alcol, Droghe & Fumo]]></string>
+    <string name="sex_nudity"><![CDATA[Sesso & Nudità]]></string>
+    <string name="violence_gore"><![CDATA[Violenza & Sangue]]></string>
+    <string name="profanity">Volgarità</string>
+    <string name="please_wait">Attendere prego...</string>
+    <string name="cast">Cast</string>
+    <string name="crew">Staff</string>
+    <string name="no_result_to_show">Nessun risultato da mostrare...</string>
+    <string name="movie">Film</string>
+    <string name="tv_show">Serie TV</string>
+    <string name="genre">Genere</string>
+    <string name="discover_movies_shows"><![CDATA[Scopri Film & Serie...]]></string>
+    <string name="about_movie">Informazioni sul Film</string>
+    <string name="release_date">Data di Uscita</string>
+    <string name="movies">Film</string>
+    <string name="similar">Simili</string>
+    <string name="providers">Fornitori</string>
+    <string name="all">Tutti</string>
+    <string name="seasons">Stagioni</string>
+    <string name="comments">Commenti</string>
+    <string name="parent">Genitore</string>
+    <string name="guide">Guida</string>
+    <string name="about_show">Informazioni sulla Serie</string>
+    <string name="episode">Episodio %1$s: %2$s</string>
+    <string name="episodes">Episodi (%1$s)</string>
+    <string name="season">Stagione</string>
+    <string name="popular">Popolare</string>
+    <string name="top_10_shows">Top 10 Serie</string>
+    <string name="this_week">Questa Settimana</string>
+    <string name="top_10_movies">Top 10 Film</string>
+    <string name="of_all_time">Di Tutti i Tempi</string>
+    <string name="on_the_air">In Onda</string>
+    <string name="now_playing">Ora in Programma</string>
+    <string name="shows">Serie</string>
+    <string name="images">Immagini</string>
+
+</resources>

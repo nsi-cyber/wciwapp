@@ -17,10 +17,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.nsicyber.wciwapp.R
 import com.nsicyber.wciwapp.domain.model.CardViewData
 import presentation.components.AutoScrollerHorizontalPagerView
 
@@ -62,7 +64,7 @@ fun TrendingSection(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
-                    text = "Discover Movies & Shows...",
+                    text = stringResource(R.string.discover_movies_shows),
                     color = Color.Black,
                     fontSize = 18.sp,
                     textAlign = TextAlign.Start,
