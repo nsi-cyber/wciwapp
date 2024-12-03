@@ -24,7 +24,7 @@ fun TopRatedShowsItem.toCardViewData(): CardViewData {
         id = id,
         media_type = "tv",
         title = name,
-        poster_path = poster_path,
+        poster_path = poster_path?:"",
         vote_average = vote_average,
         date = first_air_date
     )

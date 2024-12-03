@@ -66,7 +66,8 @@ import com.nsicyber.wciwapp.secondaryColor
 fun SearchScreen(
     searchScreenViewModel: SearchScreenViewModel = hiltViewModel(),
     onMovieDetailClicked: (movieId: Int?) -> Unit = {},
-    onShowDetailClicked: (showId: Int?) -> Unit = {}
+    onShowDetailClicked: (showId: Int?) -> Unit = {},
+    onPersonDetailClicked: (personId: Int?) -> Unit = {}
 ) {
     val uiState by searchScreenViewModel.uiState.collectAsState()
     val focusRequester = remember { FocusRequester() }
@@ -113,6 +114,9 @@ fun SearchScreen(
                                     onMovieDetailClicked(result.id)
                                 } else if (result?.media_type == "tv") {
                                     onShowDetailClicked(result.id)
+                                }
+                                else if (result?.media_type == "person") {
+                                    onPersonDetailClicked(result.id)
                                 }
 
                             }
@@ -269,16 +273,18 @@ fun SearchCard(
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = data?.title.orEmpty() + " (" + data?.date?.take(4) + ")",
+                text = data?.title.orEmpty() + if(!data?.date.isNullOrEmpty()){" (" + data?.date?.take(4) + ")"} else {
+""
+                },
                 color = Color.White,
                 fontSize = 18.sp,
                 textAlign = TextAlign.Start,
                 fontWeight = FontWeight.Medium,
             )
             Text(
-                text = if (data?.media_type == "movie") stringResource(R.string.movie) else stringResource(
+                text = if (data?.media_type == "movie") stringResource(R.string.movie) else if (data?.media_type == "tv" ) stringResource(
                     R.string.tv_show
-                ),
+                ) else stringResource(R.string.person),
                 color = Color.Gray,
                 fontSize = 12.sp,
                 maxLines = 2,

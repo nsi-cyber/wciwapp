@@ -1,6 +1,5 @@
 package com.nsicyber.wciwapp.data.remote
 
-import android.graphics.Region
 import com.nsicyber.wciwapp.common.Constants
 import com.nsicyber.wciwapp.data.remote.response.creditsList.CreditsListResponse
 import com.nsicyber.wciwapp.data.remote.response.genreKeywordList.GenreKeywordListResponse
@@ -8,6 +7,9 @@ import com.nsicyber.wciwapp.data.remote.response.imageList.ImageListResponse
 import com.nsicyber.wciwapp.data.remote.response.movieDetail.MovieDetailResponse
 import com.nsicyber.wciwapp.data.remote.response.movieGenreList.MovieGenreListResponse
 import com.nsicyber.wciwapp.data.remote.response.movieNowPlayingList.MovieNowPlayingListResponse
+import com.nsicyber.wciwapp.data.remote.response.personDetail.PersonDetailResponse
+import com.nsicyber.wciwapp.data.remote.response.personImageList.PersonImageListResponse
+import com.nsicyber.wciwapp.data.remote.response.personMovieCreditList.PersonMovieCreditListResponse
 import com.nsicyber.wciwapp.data.remote.response.popularMoviesList.PopularMoviesListResponse
 import com.nsicyber.wciwapp.data.remote.response.providersList.ProvidersListResponse
 import com.nsicyber.wciwapp.data.remote.response.searchResultList.SearchResultListResponse
@@ -178,5 +180,34 @@ interface ApiService {
         @Query("language") language: String = Constants.BASE_LANGUAGE,
         @Query("region") region: String = Constants.BASE_COUNTRY
     ): Response<MovieNowPlayingListResponse?>
+
+
+    @GET(Constants.Endpoints.PERSON_MOVIE_CREDITS)
+    suspend fun getPersonMovies(
+        @Path("person_id") personId: Int,
+        @Query("language") language: String = Constants.BASE_LANGUAGE
+    ): Response<PersonMovieCreditListResponse?>
+
+    @GET(Constants.Endpoints.PERSON_SHOW_CREDITS)
+    suspend fun getPersonShows(
+        @Path("person_id") personId: Int,
+        @Query("language") language: String = Constants.BASE_LANGUAGE
+    ): Response<PersonMovieCreditListResponse?>
+
+
+    @GET(Constants.Endpoints.PERSON_IMAGES)
+    suspend fun getPersonImages(
+        @Path("person_id") personId: Int?
+    ): Response<PersonImageListResponse?>
+
+
+
+    @GET(Constants.Endpoints.PERSON_DETAIL)
+    suspend fun getPersonDetail(
+        @Path("person_id") personId: Int?,
+        @Query("language") language: String = Constants.BASE_LANGUAGE
+    ): Response<PersonDetailResponse?>
+
+
 
 }

@@ -1,6 +1,5 @@
 package com.nsicyber.wciwapp.common
 
-import com.orhanobut.hawk.Hawk
 import java.util.Locale
 
 
@@ -55,6 +54,10 @@ object Constants {
         const val MOVIE_NOW_PLAYING = "movie/now_playing"
 
 
+        const val PERSON_IMAGES = "person/{person_id}/images"
+        const val PERSON_SHOW_CREDITS = "person/{person_id}/tv_credits"
+        const val PERSON_MOVIE_CREDITS = "person/{person_id}/movie_credits"
+        const val PERSON_DETAIL = "person/{person_id}"
 
 
 
@@ -66,6 +69,7 @@ object Constants {
         val SEARCH_SCREEN = "search_screen"
         val MOVIE_DETAIL_SCREEN = "movie_detail_screen/"
         val SHOW_DETAIL_SCREEN = "show_detail_screen/"
+        val PERSON_DETAIL_SCREEN = "person_detail_screen/"
     }
 
 }

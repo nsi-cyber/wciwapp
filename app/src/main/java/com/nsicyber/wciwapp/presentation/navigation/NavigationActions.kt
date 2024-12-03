@@ -34,6 +34,14 @@ class NavigationActions(private val navController: NavHostController) {
         }
     }
 
+    fun navigateToPersonDetailScreen(personId: Int) {
+        navController.navigate(
+            "${Constants.Routes.PERSON_DETAIL_SCREEN}/${personId}"
+        ) {
+            popUpToTop(navController)
+        }
+    }
+
     fun navigateToShowDetailScreen(showId: Int) {
         navController.navigate(
             "${Constants.Routes.SHOW_DETAIL_SCREEN}/${showId}"

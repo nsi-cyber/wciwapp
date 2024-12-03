@@ -40,4 +40,11 @@
     <string name="now_playing">Jetzt im Kino</string>
     <string name="shows">Serien</string>
     <string name="images">Bilder</string>
+    <string name="person">Person</string>
+    <string name="behind_the_camera">Hinter der Kamera</string>
+    <string name="appearances_in">Auftritte in</string>
+    <string name="about_person">Über die Person</string>
+    <string name="know_for">Bekannt für</string>
+    <string name="birth_date">Geburtsdatum</string>
+    <string name="death_date">Sterbedatum</string>
 </resources>

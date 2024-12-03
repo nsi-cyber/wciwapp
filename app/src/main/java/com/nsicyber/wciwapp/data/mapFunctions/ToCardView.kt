@@ -8,7 +8,7 @@ fun Result.toCardViewData(): CardViewData {
         id = id,
         media_type = "tv",
         title = this.name,
-        poster_path = poster_path,
+        poster_path = poster_path?:profile_path?:"",
         vote_average = vote_average,
         date = this.first_air_date
     )

@@ -56,7 +56,7 @@ fun PaginationListContent(
         LazyHorizontalGrid(
             state = lazyGridState,
             rows = GridCells.Fixed(rowCount),
-            modifier = Modifier.height(if (rowCount == 2) 400.dp else 200.dp),
+            modifier = Modifier.height((rowCount*200).dp),
             contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp),
             verticalArrangement = Arrangement.spacedBy(4.dp)

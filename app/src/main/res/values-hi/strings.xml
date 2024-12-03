@@ -40,5 +40,11 @@
     <string name="now_playing">अब चल रहा है</string>
     <string name="shows">शो</string>
     <string name="images">चित्र</string>
-
+    <string name="person">व्यक्ति</string>
+    <string name="behind_the_camera">कैमरे के पीछे</string>
+    <string name="appearances_in">उपस्थिति</string>
+    <string name="about_person">व्यक्ति के बारे में</string>
+    <string name="know_for">के लिए जाना जाता है</string>
+    <string name="birth_date">जन्म तिथि</string>
+    <string name="death_date">मृत्यु तिथि</string>
 </resources>

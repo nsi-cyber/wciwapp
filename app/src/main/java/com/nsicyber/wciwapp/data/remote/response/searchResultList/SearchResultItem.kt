@@ -11,6 +11,7 @@ data class SearchResultItem(
     val original_name: String? = null,
     val original_title: String? = null,
     val poster_path: String? = null,
+    val profile_path: String? = null,
     val release_date: String? = null,
     val vote_average: Double? = null,
     val title: String? = null,
@@ -24,14 +25,15 @@ fun SearchResultItem.toCardViewData(): CardViewData {
         title = when (media_type) {
             "movie" -> title
             "tv" -> name
-            else -> null
+            "person" -> name
+            else -> ""
         },
-        poster_path = poster_path,
+        poster_path = poster_path?:profile_path?:"",
         vote_average = vote_average,
         date = when (media_type) {
             "movie" -> release_date
             "tv" -> first_air_date
-            else -> null
+            else -> ""
         }
     )
 }

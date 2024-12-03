@@ -2,7 +2,7 @@ package com.nsicyber.wciwapp.data.remote.response.creditsList
 
 
 data class Crew(
-    val id: Int? = null,
+    val id: Int,
     val job: String? = null,
     val name: String? = null,
 

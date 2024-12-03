@@ -40,4 +40,11 @@
     <string name="now_playing">Now Playing</string>
     <string name="shows">Shows</string>
     <string name="images">Images</string>
+    <string name="person">Person</string>
+    <string name="behind_the_camera">Behind the camera</string>
+    <string name="appearances_in">Appearances in</string>
+    <string name="about_person">About Person</string>
+    <string name="know_for">Know For</string>
+    <string name="birth_date">Birth Date</string>
+    <string name="death_date">Death Date</string>
 </resources>

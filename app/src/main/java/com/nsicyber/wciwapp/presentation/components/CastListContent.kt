@@ -1,6 +1,7 @@
 package com.nsicyber.wciwapp.presentation.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -35,8 +36,10 @@ import com.nsicyber.wciwapp.data.remote.response.creditsList.Cast
 
 @Composable
 fun CastListContent(
-    list: List<Cast?>?
-) {
+    list: List<Cast?>?,
+    onPersonDetailClicked: (personId: Int) -> Unit = {},
+
+    ) {
     val lazyGridState = rememberLazyGridState()
 
     Column {
@@ -62,7 +65,7 @@ fun CastListContent(
 
             items(list?.sortedByDescending { it?.popularity } ?: listOf()) { cast ->
                 CastCard(
-                    cast = cast
+                    cast = cast, onPersonDetailClicked = { onPersonDetailClicked(it) }
                 )
 
 
@@ -75,14 +78,17 @@ fun CastListContent(
 @Composable
 fun CastCard(
     modifier: Modifier = Modifier,
-    cast: Cast? = null
-) {
+    cast: Cast? = null,
+    onPersonDetailClicked: (personId: Int) -> Unit = {},
+
+    ) {
 
     Column(
         modifier = Modifier
             .fillMaxHeight()
             .width(120.dp)
-            .padding(horizontal = 8.dp),
+            .padding(horizontal = 8.dp)
+            .clickable { onPersonDetailClicked(cast?.id?:0) },
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

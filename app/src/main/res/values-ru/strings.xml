@@ -40,5 +40,11 @@
     <string name="now_playing">Сейчас в Прокате</string>
     <string name="shows">Шоу</string>
     <string name="images">Изображения</string>
-
+    <string name="person">Человек</string>
+    <string name="behind_the_camera">За Камерой</string>
+    <string name="appearances_in">Появления в</string>
+    <string name="about_person">О Человеке</string>
+    <string name="know_for">Известен по</string>
+    <string name="birth_date">Дата Рождения</string>
+    <string name="death_date">Дата Смерти</string>
 </resources>

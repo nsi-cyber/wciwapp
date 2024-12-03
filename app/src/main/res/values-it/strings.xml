@@ -40,5 +40,11 @@
     <string name="now_playing">Ora in Programma</string>
     <string name="shows">Serie</string>
     <string name="images">Immagini</string>
-
+    <string name="person">Persona</string>
+    <string name="behind_the_camera">Dietro la Telecamera</string>
+    <string name="appearances_in">Apparizioni in</string>
+    <string name="about_person">Informazioni sulla Persona</string>
+    <string name="know_for">Conosciuto per</string>
+    <string name="birth_date">Data di Nascita</string>
+    <string name="death_date">Data di Morte</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.nsicyber.wciwapp.presentation.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -37,8 +38,10 @@ import com.nsicyber.wciwapp.data.remote.response.creditsList.Crew
 
 @Composable
 fun CrewListContent(
-    list: List<Crew?>?
-) {
+    list: List<Crew?>?,
+    onPersonDetailClicked: (personId: Int) -> Unit = {},
+
+    ) {
     val lazyGridState = rememberLazyGridState()
 
     Column {
@@ -64,7 +67,7 @@ fun CrewListContent(
 
             items(list?.sortedByDescending { it?.popularity } ?: listOf()) { crew ->
                 CrewCard(
-                    crew = crew
+                    crew = crew, onPersonDetailClicked = {onPersonDetailClicked(it)}
                 )
 
 
@@ -78,13 +81,15 @@ fun CrewListContent(
 @Composable
 fun CrewCard(
     modifier: Modifier = Modifier,
-    crew: Crew? = null
-) {
+    crew: Crew? = null,
+    onPersonDetailClicked: (personId: Int) -> Unit = {},
+
+    ) {
 
     Column(
         modifier = Modifier
             .fillMaxHeight()
-            .width(120.dp),
+            .width(120.dp).clickable { onPersonDetailClicked(crew?.id?:0) },
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

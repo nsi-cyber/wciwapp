@@ -1,6 +1,5 @@
 package com.nsicyber.wciwapp.presentation.detailScreen.showDetailScreen
 
-import android.text.Html
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nsicyber.wciwapp.common.ApiResult
@@ -8,7 +7,6 @@ import com.nsicyber.wciwapp.data.mapFunctions.parseParentalData
 import com.nsicyber.wciwapp.data.mapFunctions.toCardViewData
 import com.nsicyber.wciwapp.data.remote.response.creditsList.CreditsListResponse
 import com.nsicyber.wciwapp.data.remote.response.imageList.ImageListResponseItem
-import com.nsicyber.wciwapp.data.remote.response.providersList.ProviderItemData
 import com.nsicyber.wciwapp.data.remote.response.providersList.ProvidersListResponseData
 import com.nsicyber.wciwapp.data.remote.response.showDetail.ShowDetailResponse
 import com.nsicyber.wciwapp.data.remote.response.showSeasonDetail.toSeasonModel
@@ -39,7 +37,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.jsoup.Jsoup
 import javax.inject.Inject
-import kotlin.reflect.full.memberProperties
 
 
 @HiltViewModel

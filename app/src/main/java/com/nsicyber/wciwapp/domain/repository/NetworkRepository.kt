@@ -7,6 +7,9 @@ import com.nsicyber.wciwapp.data.remote.response.imageList.ImageListResponse
 import com.nsicyber.wciwapp.data.remote.response.movieDetail.MovieDetailResponse
 import com.nsicyber.wciwapp.data.remote.response.movieGenreList.MovieGenreListResponse
 import com.nsicyber.wciwapp.data.remote.response.movieNowPlayingList.MovieNowPlayingListResponse
+import com.nsicyber.wciwapp.data.remote.response.personDetail.PersonDetailResponse
+import com.nsicyber.wciwapp.data.remote.response.personImageList.PersonImageListResponse
+import com.nsicyber.wciwapp.data.remote.response.personMovieCreditList.PersonMovieCreditListResponse
 import com.nsicyber.wciwapp.data.remote.response.popularMoviesList.PopularMoviesListResponse
 import com.nsicyber.wciwapp.data.remote.response.providersList.ProvidersListResponse
 import com.nsicyber.wciwapp.data.remote.response.searchResultList.SearchResultListResponse
@@ -71,7 +74,6 @@ interface NetworkRepository {
     ): Flow<ApiResult<ShowGenreListResult?>>
 
 
-
     suspend fun getMovieNowPlayingList(
         page: Int,
     ): Flow<ApiResult<MovieNowPlayingListResponse?>>
@@ -81,7 +83,23 @@ interface NetworkRepository {
         page: Int,
     ): Flow<ApiResult<ShowOnAirListResponse?>>
 
+    suspend fun getPersonMovies(
+        personId: Int,
+    ): Flow<ApiResult<PersonMovieCreditListResponse?>>
 
+
+    suspend fun getPersonShows(
+        personId: Int,
+    ): Flow<ApiResult<PersonMovieCreditListResponse?>>
+
+
+    suspend fun getPersonImages(
+        personId: Int?
+    ): Flow<ApiResult<PersonImageListResponse?>>
+
+    suspend fun getPersonDetail(
+        personId: Int?,
+    ): Flow<ApiResult<PersonDetailResponse?>>
 }
 
 

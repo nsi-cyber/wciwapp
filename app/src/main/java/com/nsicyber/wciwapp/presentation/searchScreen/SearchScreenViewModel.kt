@@ -183,8 +183,8 @@ constructor(
                     is ApiResult.Success -> {
 
                         updateUiState {
-                            copy(searchResult = result.data?.results?.map { it.toCardViewData() }
-                                ?.filter { it.title?.isNotEmpty() == true })
+                            copy(searchResult = result.data?.results?.filter { listOf("movie","tv","person").contains(it.media_type) }?.map { it.toCardViewData() }
+                                )
                         }
                     }
 

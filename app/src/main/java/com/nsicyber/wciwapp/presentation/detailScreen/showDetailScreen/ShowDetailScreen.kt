@@ -72,7 +72,9 @@ fun ShowDetailScreen(
     showId: Int?,
     showDetailScreenViewModel: ShowDetailScreenViewModel = hiltViewModel<ShowDetailScreenViewModel>(),
     onShowDetailClicked: (showId: Int) -> Unit = {},
-) {
+    onPersonDetailClicked: (personId: Int) -> Unit = {},
+
+    ) {
     val showDetailScreenState by showDetailScreenViewModel.uiState.collectAsState()
 
     LaunchedEffect(Unit) {
@@ -205,14 +207,14 @@ fun ShowDetailScreen(
 
             item {
                 showDetailScreenState.credits?.cast?.takeIf { it.isNotEmpty() }?.let {
-                    CastListContent(it)
+                    CastListContent(it, onPersonDetailClicked = { onPersonDetailClicked(it) })
                 }
             }
 
 
             item {
                 showDetailScreenState.credits?.crew?.takeIf { it.isNotEmpty() }?.let {
-                    CrewListContent(it)
+                    CrewListContent(it, onPersonDetailClicked = { onPersonDetailClicked(it) })
                 }
             }
 
@@ -248,7 +250,9 @@ fun ShowDetailScreen(
 
             item {
                 showDetailScreenState.similars?.takeIf { it.isNotEmpty() }?.let {
-                    PaginationListContent(title = stringResource(R.string.similar), subtitle = stringResource(R.string.shows), rowCount = 1,
+                    PaginationListContent(title = stringResource(R.string.similar),
+                        subtitle = stringResource(R.string.shows),
+                        rowCount = 1,
                         list = showDetailScreenState.similars,
                         onItemClick = { id ->
                             onShowDetailClicked(id)
@@ -447,7 +451,7 @@ fun EpisodeListItemView(
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
-                text = stringResource(R.string.episode, count, data?.episodeName?:""),
+                text = stringResource(R.string.episode, count, data?.episodeName ?: ""),
                 modifier = Modifier.weight(1f),
                 color = Color.White
             )

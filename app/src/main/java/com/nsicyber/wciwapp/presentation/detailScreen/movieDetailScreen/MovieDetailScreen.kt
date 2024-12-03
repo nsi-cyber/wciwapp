@@ -48,7 +48,9 @@ fun MovieDetailScreen(
     movieId: Int?,
     movieDetailScreenViewModel: MovieDetailScreenViewModel = hiltViewModel<MovieDetailScreenViewModel>(),
     onMovieDetailClicked: (movieId: Int) -> Unit = {},
+    onPersonDetailClicked: (personId: Int) -> Unit = {},
 ) {
+
     val movieDetailScreenState by movieDetailScreenViewModel.uiState.collectAsState()
 
     LaunchedEffect(Unit) {
@@ -178,7 +180,7 @@ fun MovieDetailScreen(
 
             item {
                 movieDetailScreenState.credits?.cast?.takeIf { it.isNotEmpty() }?.let {
-                    CastListContent(it)
+                    CastListContent(it, onPersonDetailClicked = { onPersonDetailClicked(it) })
 
 
                 }
@@ -187,7 +189,7 @@ fun MovieDetailScreen(
 
             item {
                 movieDetailScreenState.credits?.crew?.takeIf { it.isNotEmpty() }?.let {
-                    CrewListContent(it)
+                    CrewListContent(it, onPersonDetailClicked = { onPersonDetailClicked(it) })
                 }
             }
 

@@ -30,6 +30,7 @@ import com.nsicyber.wciwapp.presentation.detailScreen.movieDetailScreen.MovieDet
 import com.nsicyber.wciwapp.presentation.detailScreen.showDetailScreen.ShowDetailScreen
 import com.nsicyber.wciwapp.presentation.exploreScreen.ExploreScreen
 import com.nsicyber.wciwapp.presentation.exploreScreen.ExploreScreenViewModel
+import com.nsicyber.wciwapp.presentation.personScreen.PersonDetailScreen
 import com.nsicyber.wciwapp.presentation.searchScreen.SearchScreen
 import com.nsicyber.wciwapp.presentation.searchScreen.SearchScreenViewModel
 
@@ -109,7 +110,8 @@ fun NavigationGraph(
                             navActions.navigateToShowDetailScreen(
                                 it ?: 0
                             )
-                        }
+                        },
+                        onPersonDetailClicked = { navActions.navigateToPersonDetailScreen(it ?: 0) }
 
 
                     )
@@ -131,9 +133,30 @@ fun NavigationGraph(
                 ) {
                     MovieDetailScreen(movieId = it.arguments?.getInt("movieId")
                         ?: 0,
-                        onMovieDetailClicked = { navActions.navigateToMovieDetailScreen(it) })
+                        onMovieDetailClicked = { navActions.navigateToMovieDetailScreen(it) },
+                        onPersonDetailClicked = { navActions.navigateToPersonDetailScreen(it) })
 
                 }
+
+
+
+                composable(
+                    route = "${Constants.Routes.PERSON_DETAIL_SCREEN}/{personId}",
+                    arguments = listOf(navArgument("personId") {
+                        type = NavType.IntType
+                    })
+                ) {
+                    PersonDetailScreen(
+                        personId = it.arguments?.getInt("personId")
+                            ?: 0,
+                        onMovieDetailClicked = { navActions.navigateToMovieDetailScreen(it) },
+                        onShowDetailClicked = { navActions.navigateToShowDetailScreen(it) },
+                    )
+
+                }
+
+
+
                 composable(
                     route = "${Constants.Routes.SHOW_DETAIL_SCREEN}/{showId}",
                     arguments = listOf(navArgument("showId") {
@@ -142,7 +165,9 @@ fun NavigationGraph(
                 ) {
                     ShowDetailScreen(showId = it.arguments?.getInt("showId")
                         ?: 0,
-                        onShowDetailClicked = { navActions.navigateToShowDetailScreen(it) })
+                        onShowDetailClicked = { navActions.navigateToShowDetailScreen(it) },
+                        onPersonDetailClicked = { navActions.navigateToPersonDetailScreen(it) }
+                    )
 
                 }
 

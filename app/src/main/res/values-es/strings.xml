@@ -40,5 +40,11 @@
     <string name="now_playing">En Cartelera</string>
     <string name="shows">Series</string>
     <string name="images">Imágenes</string>
-
+    <string name="person">Persona</string>
+    <string name="behind_the_camera">Detrás de la Cámara</string>
+    <string name="appearances_in">Apariciones en</string>
+    <string name="about_person">Sobre la Persona</string>
+    <string name="know_for">Conocido por</string>
+    <string name="birth_date">Fecha de Nacimiento</string>
+    <string name="death_date">Fecha de Fallecimiento</string>
 </resources>

@@ -40,5 +40,11 @@
     <string name="now_playing">En Salle</string>
     <string name="shows">Séries</string>
     <string name="images">Images</string>
-
+    <string name="person">Personne</string>
+    <string name="behind_the_camera">Derrière la Caméra</string>
+    <string name="appearances_in">Apparitions dans</string>
+    <string name="about_person">À Propos de la Personne</string>
+    <string name="know_for">Connu pour</string>
+    <string name="birth_date">Date de Naissance</string>
+    <string name="death_date">Date de Décès</string>
 </resources>

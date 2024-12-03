@@ -41,5 +41,11 @@
     <string name="now_playing">Şimdi Gösterimde</string>
     <string name="shows">Diziler</string>
     <string name="images">Görseller</string>
-
+    <string name="person">Kişi</string>
+    <string name="behind_the_camera">Kameranın Arkasında</string>
+    <string name="appearances_in">Göründüğü Yerler</string>
+    <string name="about_person">Kişi Hakkında</string>
+    <string name="know_for">Bilindiği Konular</string>
+    <string name="birth_date">Doğum Tarihi</string>
+    <string name="death_date">Ölüm Tarihi</string>
 </resources>

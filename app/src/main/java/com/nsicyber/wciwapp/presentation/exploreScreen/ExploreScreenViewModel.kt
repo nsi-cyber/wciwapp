@@ -67,16 +67,7 @@ constructor(
     private var isLoadingPopularMovies = mutableStateOf(false)
     private var isLoadingTopRatedShows = mutableStateOf(false)
 
-    init {
-        fetchInitialData()
-    }
 
-    private fun fetchInitialData() {
-        onEvent(ExploreScreenEvent.LoadPopularMovies)
-        onEvent(ExploreScreenEvent.LoadTopRatedShows)
-        onEvent(ExploreScreenEvent.LoadTrending)
-        onEvent(ExploreScreenEvent.LoadTopMovies)
-    }
 
     fun onEvent(event: ExploreScreenEvent) {
         when (event) {

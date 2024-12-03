@@ -1,7 +1,6 @@
 package com.nsicyber.wciwapp.presentation.components
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -29,7 +28,6 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.nsicyber.wciwapp.common.Constants
 import com.nsicyber.wciwapp.data.remote.response.imageList.ImageListResponseItem
-import net.engawapg.lib.zoomable.ScrollGesturePropagation
 import net.engawapg.lib.zoomable.rememberZoomState
 import net.engawapg.lib.zoomable.toggleScale
 import net.engawapg.lib.zoomable.zoomable

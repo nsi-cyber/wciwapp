@@ -5,6 +5,9 @@ import com.nsicyber.wciwapp.common.apiFlow
 import com.nsicyber.wciwapp.data.remote.ApiService
 import com.nsicyber.wciwapp.data.remote.response.creditsList.CreditsListResponse
 import com.nsicyber.wciwapp.data.remote.response.imageList.ImageListResponse
+import com.nsicyber.wciwapp.data.remote.response.personDetail.PersonDetailResponse
+import com.nsicyber.wciwapp.data.remote.response.personImageList.PersonImageListResponse
+import com.nsicyber.wciwapp.data.remote.response.personMovieCreditList.PersonMovieCreditListResponse
 import com.nsicyber.wciwapp.data.remote.response.providersList.ProvidersListResponse
 import com.nsicyber.wciwapp.data.remote.response.showExternalId.ExternalIdResponse
 import com.nsicyber.wciwapp.data.remote.response.showSeasonDetail.ShowSeasonDetailResponse
@@ -136,5 +139,30 @@ class NetworkRepositoryImpl @Inject constructor(private val apiService: ApiServi
 
     }
 
+
+
+
+    override suspend fun getPersonMovies(
+        personId: Int
+    ): Flow<ApiResult<PersonMovieCreditListResponse?>> = apiFlow {
+        apiService.getPersonMovies( personId = personId)
+
+    }
+
+    override suspend fun getPersonShows(
+        personId: Int
+    ): Flow<ApiResult<PersonMovieCreditListResponse?>> = apiFlow {
+        apiService.getPersonShows( personId = personId)
+
+    }
+
+    override suspend fun getPersonImages(personId: Int?): Flow<ApiResult<PersonImageListResponse?>> = apiFlow {
+        apiService.getPersonImages(personId = personId)
+
+    }
+    override suspend fun getPersonDetail(personId: Int?): Flow<ApiResult<PersonDetailResponse?>>  = apiFlow {
+        apiService.getPersonDetail(personId = personId)
+
+    }
 
 }

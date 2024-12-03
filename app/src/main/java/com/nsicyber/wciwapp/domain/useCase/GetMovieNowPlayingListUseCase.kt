@@ -1,7 +1,6 @@
 package com.nsicyber.wciwapp.domain.useCase
 
 import com.nsicyber.wciwapp.common.ApiResult
-import com.nsicyber.wciwapp.data.remote.response.genreKeywordList.GenreKeywordListResponse
 import com.nsicyber.wciwapp.data.remote.response.movieNowPlayingList.MovieNowPlayingListResponse
 import com.nsicyber.wciwapp.domain.repository.NetworkRepository
 import kotlinx.coroutines.flow.Flow
