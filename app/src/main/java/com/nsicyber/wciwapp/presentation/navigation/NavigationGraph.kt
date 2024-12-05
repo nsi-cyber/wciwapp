@@ -33,6 +33,7 @@ import com.nsicyber.wciwapp.presentation.exploreScreen.ExploreScreenViewModel
 import com.nsicyber.wciwapp.presentation.personScreen.PersonDetailScreen
 import com.nsicyber.wciwapp.presentation.searchScreen.SearchScreen
 import com.nsicyber.wciwapp.presentation.searchScreen.SearchScreenViewModel
+import com.nsicyber.wciwapp.presentation.splashScreen.SplashScreen
 
 
 @Preview
@@ -42,7 +43,7 @@ fun NavigationGraph(
     navController: NavHostController = rememberNavController(),
     exploreScreenViewModel: ExploreScreenViewModel = hiltViewModel<ExploreScreenViewModel>(),
     searchScreenViewModel: SearchScreenViewModel = hiltViewModel<SearchScreenViewModel>(),
-    startDestination: String = Constants.Routes.EXPLORE_SCREEN,
+    startDestination: String = Constants.Routes.SPLASH_SCREEN,
     navActions: NavigationActions = remember(navController) {
         NavigationActions(navController)
     },
@@ -99,6 +100,12 @@ fun NavigationGraph(
             ) {
 
 
+                composable(route = Constants.Routes.SPLASH_SCREEN) {
+                    SplashScreen() {
+                        navActions.navigateToExploreScreen()
+
+                    }
+                }
                 composable(route = Constants.Routes.SEARCH_SCREEN) {
                     SearchScreen(
                         searchScreenViewModel = searchScreenViewModel,

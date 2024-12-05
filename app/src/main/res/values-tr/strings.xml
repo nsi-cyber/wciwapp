@@ -1,4 +1,3 @@
-
 <resources>
     <string name="app_name">WCIW</string>
     <string name="mild">Hafif</string>
@@ -48,4 +47,6 @@
     <string name="know_for">Bilindiği Konular</string>
     <string name="birth_date">Doğum Tarihi</string>
     <string name="death_date">Ölüm Tarihi</string>
+    <string name="what_can_i_watch">Ne İzleyebilirim ?</string>
+    <string name="this_product_uses_the_tmdb_api_but_is_not_endorsed_or_certified_by_tmdb">Bu ürün TMDB API kullanır ancak TMDB tarafından onaylanmamış veya sertifikalandırılmamıştır.</string>
 </resources>

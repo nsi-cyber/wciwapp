@@ -47,4 +47,7 @@
     <string name="know_for">Bekannt für</string>
     <string name="birth_date">Geburtsdatum</string>
     <string name="death_date">Sterbedatum</string>
+    <string name="what_can_i_watch">Was Kann Ich Anschauen ?</string>
+    <string name="this_product_uses_the_tmdb_api_but_is_not_endorsed_or_certified_by_tmdb">Dieses Produkt verwendet die TMDB-API, wird jedoch nicht von TMDB unterstützt oder zertifiziert.</string>
+
 </resources>

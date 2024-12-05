@@ -65,6 +65,7 @@ object Constants {
 
 
     object Routes {
+        val SPLASH_SCREEN = "splash_screen"
         val EXPLORE_SCREEN = "explore_screen"
         val SEARCH_SCREEN = "search_screen"
         val MOVIE_DETAIL_SCREEN = "movie_detail_screen/"
