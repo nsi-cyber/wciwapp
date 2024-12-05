@@ -4,11 +4,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nsicyber.wciwapp.common.ApiResult
+import com.nsicyber.wciwapp.data.mapFunctions.toCardViewData
 import com.nsicyber.wciwapp.data.remote.response.movieNowPlayingList.MovieNowPlayingListResponse
-import com.nsicyber.wciwapp.data.remote.response.movieNowPlayingList.toCardViewData
-import com.nsicyber.wciwapp.data.remote.response.searchResultList.toCardViewData
 import com.nsicyber.wciwapp.data.remote.response.showOnAirList.ShowOnAirListResponse
-import com.nsicyber.wciwapp.data.remote.response.showOnAirList.toCardViewData
 import com.nsicyber.wciwapp.domain.model.CardViewData
 import com.nsicyber.wciwapp.domain.useCase.GetMovieNowPlayingListUseCase
 import com.nsicyber.wciwapp.domain.useCase.GetSearchResultsUseCase

@@ -5,12 +5,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nsicyber.wciwapp.common.ApiResult
+import com.nsicyber.wciwapp.data.mapFunctions.toCardViewData
 import com.nsicyber.wciwapp.data.remote.response.popularMoviesList.PopularMoviesListResponse
-import com.nsicyber.wciwapp.data.remote.response.popularMoviesList.toCardViewData
 import com.nsicyber.wciwapp.data.remote.response.topRatedShowsList.TopRatedShowsListResponse
-import com.nsicyber.wciwapp.data.remote.response.topRatedShowsList.toCardViewData
 import com.nsicyber.wciwapp.data.remote.response.trendingList.TrendingListResponse
-import com.nsicyber.wciwapp.data.remote.response.trendingList.toCardViewData
 import com.nsicyber.wciwapp.domain.model.CardViewData
 import com.nsicyber.wciwapp.domain.useCase.GetPopularMoviesUseCase
 import com.nsicyber.wciwapp.domain.useCase.GetTopMoviesUseCase

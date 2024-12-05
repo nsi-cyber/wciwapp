@@ -5,10 +5,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.nsicyber.wciwapp.common.ApiResult
 import com.nsicyber.wciwapp.data.mapFunctions.parseParentalData
+import com.nsicyber.wciwapp.data.mapFunctions.toCardViewData
 import com.nsicyber.wciwapp.data.remote.response.creditsList.CreditsListResponse
 import com.nsicyber.wciwapp.data.remote.response.imageList.ImageListResponseItem
 import com.nsicyber.wciwapp.data.remote.response.movieDetail.MovieDetailResponse
-import com.nsicyber.wciwapp.data.remote.response.popularMoviesList.toCardViewData
 import com.nsicyber.wciwapp.data.remote.response.providersList.ProviderItemData
 import com.nsicyber.wciwapp.data.remote.response.providersList.ProvidersListResponseData
 import com.nsicyber.wciwapp.data.remote.response.videosList.VideosListResponseItem

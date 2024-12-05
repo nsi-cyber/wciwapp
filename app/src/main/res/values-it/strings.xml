@@ -49,4 +49,6 @@
     <string name="death_date">Data di Morte</string>
     <string name="what_can_i_watch">Cosa Posso Guardare ?</string>
     <string name="this_product_uses_the_tmdb_api_but_is_not_endorsed_or_certified_by_tmdb">Questo prodotto utilizza API TMDB ma non è approvato né certificato da TMDB.</string>
+    <string name="original_name">Nome Originale</string>
+
 </resources>

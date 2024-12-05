@@ -117,7 +117,26 @@ fun MovieDetailScreen(
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.fillMaxWidth()
                     )
+                    if (movieDetailScreenState.details?.original_title != movieDetailScreenState.details?.title) {
 
+                        Text(
+                            text = stringResource(R.string.original_name),
+                            color = Color.Gray,
+                            fontSize = 22.sp,
+                            textAlign = TextAlign.Start,
+                            fontWeight = FontWeight.Normal,
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                        Text(
+                            lineHeight = 30.sp,
+                            text = movieDetailScreenState.details?.original_title ?: "",
+                            color = Color.White,
+                            fontSize = 28.sp,
+                            textAlign = TextAlign.Start,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                    }
                     movieDetailScreenState.details?.overview?.takeIf { it.isNotEmpty() }
                         ?.let { overview ->
 

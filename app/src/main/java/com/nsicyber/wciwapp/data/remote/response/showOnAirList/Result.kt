@@ -18,14 +18,3 @@ data class Result(
     val vote_average: Double,
     val vote_count: Int
 )
-
-fun Result?.toCardViewData(): CardViewData {
-    return CardViewData(
-        id = this?.id,
-        media_type = "movie",
-        title = this?.name,
-        poster_path = this?.poster_path?:"",
-        vote_average = this?.vote_average,
-        date = this?.first_air_date
-    )
-}

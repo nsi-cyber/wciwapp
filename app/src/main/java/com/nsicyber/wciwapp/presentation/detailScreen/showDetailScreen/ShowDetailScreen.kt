@@ -142,6 +142,26 @@ fun ShowDetailScreen(
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.fillMaxWidth()
                     )
+                    if (showDetailScreenState.details?.name != showDetailScreenState.details?.original_name) {
+                        Text(
+                            text = stringResource(R.string.original_name),
+                            color = Color.Gray,
+                            fontSize = 22.sp,
+                            textAlign = TextAlign.Start,
+                            fontWeight = FontWeight.Normal,
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                        Text(
+                            lineHeight = 30.sp,
+                            text = showDetailScreenState.details?.original_name ?: "",
+                            color = Color.White,
+                            fontSize = 28.sp,
+                            textAlign = TextAlign.Start,
+                            fontWeight = FontWeight.Bold,
+                            modifier = Modifier.fillMaxWidth()
+                        )
+                    }
+
 
                     showDetailScreenState.details?.overview?.takeIf { it.isNotEmpty() }
                         ?.let { overview ->

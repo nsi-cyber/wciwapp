@@ -18,22 +18,3 @@ data class SearchResultItem(
 
     )
 
-fun SearchResultItem.toCardViewData(): CardViewData {
-    return CardViewData(
-        id = id,
-        media_type = media_type,
-        title = when (media_type) {
-            "movie" -> title
-            "tv" -> name
-            "person" -> name
-            else -> ""
-        },
-        poster_path = poster_path?:profile_path?:"",
-        vote_average = vote_average,
-        date = when (media_type) {
-            "movie" -> release_date
-            "tv" -> first_air_date
-            else -> ""
-        }
-    )
-}
