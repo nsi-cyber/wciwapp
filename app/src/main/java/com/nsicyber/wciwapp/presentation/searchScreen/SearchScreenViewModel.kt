@@ -7,7 +7,6 @@ import com.nsicyber.wciwapp.common.ApiResult
 import com.nsicyber.wciwapp.data.mapFunctions.toCardViewData
 import com.nsicyber.wciwapp.data.remote.response.movieNowPlayingList.MovieNowPlayingListResponse
 import com.nsicyber.wciwapp.data.remote.response.showOnAirList.ShowOnAirListResponse
-import com.nsicyber.wciwapp.domain.model.CardViewData
 import com.nsicyber.wciwapp.domain.useCase.GetMovieNowPlayingListUseCase
 import com.nsicyber.wciwapp.domain.useCase.GetSearchResultsUseCase
 import com.nsicyber.wciwapp.domain.useCase.GetShowOnAirListUseCase
@@ -188,7 +187,7 @@ constructor(
 
                     is ApiResult.Error -> {
 
-                        // Hata durumunu burada ele alabilirsiniz
+
                     }
                 }
             }.launchIn(this)
@@ -222,21 +221,3 @@ constructor(
     }
 }
 
-
-// Olay sınıflarını tanımlayın
-sealed class SearchScreenEvent {
-    data object LoadSearchScreen : SearchScreenEvent()
-    data object GetMovieNowPlayingList : SearchScreenEvent()
-    data object GetShowOnAirList : SearchScreenEvent()
-    data object SetStateEmpty : SearchScreenEvent()
-    data class Search(val query: String) : SearchScreenEvent()
-
-}
-
-data class SearchScreenState(
-    val searchQuery: String = "",
-    val isLoading: Boolean = false,
-    val searchResult: List<CardViewData?>? = null,
-    val showOnAirList: List<CardViewData?>? = null,
-    val movieNowPlayingList: List<CardViewData?>? = null
-)

@@ -1,7 +1,5 @@
 package com.nsicyber.wciwapp.data.remote.response.showOnAirList
 
-import com.nsicyber.wciwapp.domain.model.CardViewData
-
 data class Result(
     val adult: Boolean,
     val backdrop_path: String,

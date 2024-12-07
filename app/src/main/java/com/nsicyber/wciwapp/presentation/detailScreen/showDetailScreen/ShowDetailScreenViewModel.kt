@@ -11,7 +11,6 @@ import com.nsicyber.wciwapp.data.remote.response.providersList.ProvidersListResp
 import com.nsicyber.wciwapp.data.remote.response.showDetail.ShowDetailResponse
 import com.nsicyber.wciwapp.data.remote.response.showSeasonDetail.toSeasonModel
 import com.nsicyber.wciwapp.domain.model.CardViewData
-import com.nsicyber.wciwapp.domain.model.ParentalGuideCategoryList
 import com.nsicyber.wciwapp.domain.useCase.showDetailUseCases.GetShowCreditsUseCase
 import com.nsicyber.wciwapp.domain.useCase.showDetailUseCases.GetShowDetailUseCase
 import com.nsicyber.wciwapp.domain.useCase.showDetailUseCases.GetShowExternalIdUseCase
@@ -19,6 +18,7 @@ import com.nsicyber.wciwapp.domain.useCase.showDetailUseCases.GetShowImagesUseCa
 import com.nsicyber.wciwapp.domain.useCase.showDetailUseCases.GetShowProvidersUseCase
 import com.nsicyber.wciwapp.domain.useCase.showDetailUseCases.GetShowSeasonDetailUseCase
 import com.nsicyber.wciwapp.domain.useCase.showDetailUseCases.GetShowSimilarUseCase
+import com.nsicyber.wciwapp.prese.ShowDetailState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -209,40 +209,4 @@ class ShowDetailScreenViewModel @Inject constructor(
         _uiState.update { it.update() }
     }
 }
-
-sealed class ShowDetailEvent {
-    data class LoadShowDetailScreen(val showId: Int?) : ShowDetailEvent()
-    data class GetShowSeasonDetail(val seasonCount: Int?) : ShowDetailEvent()
-}
-
-
-data class SeasonModel(
-    val seasonNumber: Int? = null,
-    val imageUrl: String? = null,
-    val seasonName: String? = null,
-    val seasonOverview: String? = null,
-    val episodes: List<EpisodeModel>? = null,
-)
-
-
-data class EpisodeModel(
-    val episodeNumber: Int? = null,
-    val episodeName: String? = null,
-    val imageUrl: String? = null,
-    val episodeOverview: String? = null,
-)
-
-data class ShowDetailState(
-    val isLoading: Boolean = false,
-    val imdbId: String = "",
-    val details: ShowDetailResponse? = null,
-    val parentalGuide: ParentalGuideCategoryList? = null,
-    val credits: CreditsListResponse? = null,
-    val images: List<ImageListResponseItem?>? = null,
-    val watchProviders: ProvidersListResponseData? = null,
-    val similars: List<CardViewData?>? = null,
-    val seasonList: List<SeasonModel>? = null
-)
-
-
 

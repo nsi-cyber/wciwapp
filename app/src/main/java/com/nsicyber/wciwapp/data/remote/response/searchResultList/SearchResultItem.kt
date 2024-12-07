@@ -1,7 +1,5 @@
 package com.nsicyber.wciwapp.data.remote.response.searchResultList
 
-import com.nsicyber.wciwapp.domain.model.CardViewData
-
 
 data class SearchResultItem(
     val first_air_date: String? = null,

@@ -1,7 +1,8 @@
 package com.nsicyber.wciwapp.data.remote.response.showSeasonDetail
 
-import com.nsicyber.wciwapp.presentation.detailScreen.showDetailScreen.EpisodeModel
-import com.nsicyber.wciwapp.presentation.detailScreen.showDetailScreen.SeasonModel
+import com.nsicyber.wciwapp.prese.EpisodeModel
+import com.nsicyber.wciwapp.prese.SeasonModel
+
 
 data class ShowSeasonDetailResponse(
     val _id: String,

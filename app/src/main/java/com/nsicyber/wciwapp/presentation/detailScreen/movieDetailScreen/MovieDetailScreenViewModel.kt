@@ -13,7 +13,6 @@ import com.nsicyber.wciwapp.data.remote.response.providersList.ProviderItemData
 import com.nsicyber.wciwapp.data.remote.response.providersList.ProvidersListResponseData
 import com.nsicyber.wciwapp.data.remote.response.videosList.VideosListResponseItem
 import com.nsicyber.wciwapp.domain.model.CardViewData
-import com.nsicyber.wciwapp.domain.model.ParentalGuideCategoryList
 import com.nsicyber.wciwapp.domain.useCase.movieDetailUseCases.GetMovieCreditsUseCase
 import com.nsicyber.wciwapp.domain.useCase.movieDetailUseCases.GetMovieDetailUseCase
 import com.nsicyber.wciwapp.domain.useCase.movieDetailUseCases.GetMovieImagesUseCase
@@ -168,21 +167,7 @@ class MovieDetailScreenViewModel @Inject constructor(
     }
 }
 
-sealed class MovieDetailEvent {
-    data class LoadMovieDetailScreen(val movieId: Int?) : MovieDetailEvent()
-}
 
-
-data class MovieDetailState(
-    val isLoading: Boolean = false,
-    val details: MovieDetailResponse? = null,
-    val parentalGuide: ParentalGuideCategoryList? = null,
-    val videos: List<VideosListResponseItem?>? = null,
-    val credits: CreditsListResponse? = null,
-    val images: List<ImageListResponseItem?>? = null,
-    val watchProviders: ProvidersListResponseData? = null,
-    val similars: List<CardViewData?>? = null
-)
 
 fun ProvidersListResponseData.getProviderByCountryCode(countryCode: String): ProviderItemData? {
     val property = ProvidersListResponseData::class.memberProperties

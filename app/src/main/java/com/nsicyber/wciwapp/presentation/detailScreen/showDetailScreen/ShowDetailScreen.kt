@@ -54,6 +54,8 @@ import com.nsicyber.wciwapp.R
 import com.nsicyber.wciwapp.common.Constants
 import com.nsicyber.wciwapp.common.Constants.IMAGE_URL
 import com.nsicyber.wciwapp.formatDate
+import com.nsicyber.wciwapp.prese.EpisodeModel
+import com.nsicyber.wciwapp.prese.SeasonModel
 import com.nsicyber.wciwapp.presentation.components.BaseView
 import com.nsicyber.wciwapp.presentation.components.CastListContent
 import com.nsicyber.wciwapp.presentation.components.CrewListContent

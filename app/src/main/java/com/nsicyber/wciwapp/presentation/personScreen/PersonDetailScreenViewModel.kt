@@ -5,7 +5,6 @@ import androidx.lifecycle.viewModelScope
 import com.nsicyber.wciwapp.common.ApiResult
 import com.nsicyber.wciwapp.data.remote.response.personDetail.PersonDetailResponse
 import com.nsicyber.wciwapp.data.remote.response.personImageList.PersonImageListResponse
-import com.nsicyber.wciwapp.data.remote.response.personImageList.Profile
 import com.nsicyber.wciwapp.data.remote.response.personMovieCreditList.PersonMovieCreditListResponse
 import com.nsicyber.wciwapp.domain.useCase.personDetailUseCases.GetPersonDetailUseCase
 import com.nsicyber.wciwapp.domain.useCase.personDetailUseCases.GetPersonImagesUseCase
@@ -21,22 +20,6 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
-
-data class PersonDetailScreenState(
-    val isLoading: Boolean = true,
-    val images: List<Profile?>? = null,
-    val shows: PersonMovieCreditListResponse? = null,
-    val movies: PersonMovieCreditListResponse? = null,
-    val personDetail: PersonDetailResponse? = null,
-)
-
-
-
-sealed class PersonDetailScreenEvent {
-    class LoadPersonDetailScreen(val personId: Int) : PersonDetailScreenEvent()
-
-}
 
 @HiltViewModel
 class PersonDetailScreenViewModel @Inject

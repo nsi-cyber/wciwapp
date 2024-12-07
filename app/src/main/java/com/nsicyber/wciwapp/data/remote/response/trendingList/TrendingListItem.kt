@@ -1,7 +1,5 @@
 package com.nsicyber.wciwapp.data.remote.response.trendingList
 
-import com.nsicyber.wciwapp.domain.model.CardViewData
-
 
 data class TrendingListItem(
 

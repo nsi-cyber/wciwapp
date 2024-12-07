@@ -9,7 +9,6 @@ import com.nsicyber.wciwapp.data.mapFunctions.toCardViewData
 import com.nsicyber.wciwapp.data.remote.response.popularMoviesList.PopularMoviesListResponse
 import com.nsicyber.wciwapp.data.remote.response.topRatedShowsList.TopRatedShowsListResponse
 import com.nsicyber.wciwapp.data.remote.response.trendingList.TrendingListResponse
-import com.nsicyber.wciwapp.domain.model.CardViewData
 import com.nsicyber.wciwapp.domain.useCase.GetPopularMoviesUseCase
 import com.nsicyber.wciwapp.domain.useCase.GetTopMoviesUseCase
 import com.nsicyber.wciwapp.domain.useCase.GetTopRatedShowsUseCase
@@ -27,24 +26,6 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-
-data class ExploreScreenState(
-    val isLoading: Boolean = true,
-    val popularMovies: List<CardViewData?>? = null,
-    val topRatedShows: List<CardViewData?>? = null,
-    val topRatedMovies: List<CardViewData?>? = null,
-    val trendingAll: List<CardViewData?>? = null,
-)
-
-
-// Olay sınıflarını tanımlayın
-sealed class ExploreScreenEvent {
-    object LoadExploreScreen : ExploreScreenEvent()
-    object LoadPopularMovies : ExploreScreenEvent()
-    object LoadTopRatedShows : ExploreScreenEvent()
-    object LoadTrending : ExploreScreenEvent()
-    object LoadTopMovies : ExploreScreenEvent()
-}
 
 @HiltViewModel
 class ExploreScreenViewModel @Inject

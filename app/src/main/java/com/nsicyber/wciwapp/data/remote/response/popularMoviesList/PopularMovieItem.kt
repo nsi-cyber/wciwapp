@@ -1,7 +1,5 @@
 package com.nsicyber.wciwapp.data.remote.response.popularMoviesList
 
-import com.nsicyber.wciwapp.domain.model.CardViewData
-
 
 data class PopularMovieItem(
     val adult: Boolean?,
