@@ -168,6 +168,13 @@ interface ApiService {
     ): Response<ShowSeasonDetailResponse?>
 
 
+    @GET(Constants.Endpoints.SHOW_VIDEOS)
+    suspend fun getShowVideos(
+        @Path("showId") showId: Int?,
+        @Query("language") language: String = Constants.BASE_LANGUAGE
+    ): Response<VideosListResponse?>
+
+
     @GET(Constants.Endpoints.SHOW_ON_AIR)
     suspend fun getShowOnAirList(
         @Query("page") page: Int,

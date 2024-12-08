@@ -85,10 +85,10 @@ fun CastCard(
 
     Column(
         modifier = Modifier
+            .clickable { onPersonDetailClicked(cast?.id?:0) }
             .fillMaxHeight()
             .width(120.dp)
-            .padding(horizontal = 8.dp)
-            .clickable { onPersonDetailClicked(cast?.id?:0) },
+            .padding(horizontal = 8.dp),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

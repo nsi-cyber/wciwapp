@@ -10,6 +10,7 @@ import com.nsicyber.wciwapp.data.remote.response.imageList.ImageListResponseItem
 import com.nsicyber.wciwapp.data.remote.response.providersList.ProvidersListResponseData
 import com.nsicyber.wciwapp.data.remote.response.showDetail.ShowDetailResponse
 import com.nsicyber.wciwapp.data.remote.response.showSeasonDetail.toSeasonModel
+import com.nsicyber.wciwapp.data.remote.response.videosList.VideosListResponseItem
 import com.nsicyber.wciwapp.domain.model.CardViewData
 import com.nsicyber.wciwapp.domain.useCase.showDetailUseCases.GetShowCreditsUseCase
 import com.nsicyber.wciwapp.domain.useCase.showDetailUseCases.GetShowDetailUseCase
@@ -18,6 +19,7 @@ import com.nsicyber.wciwapp.domain.useCase.showDetailUseCases.GetShowImagesUseCa
 import com.nsicyber.wciwapp.domain.useCase.showDetailUseCases.GetShowProvidersUseCase
 import com.nsicyber.wciwapp.domain.useCase.showDetailUseCases.GetShowSeasonDetailUseCase
 import com.nsicyber.wciwapp.domain.useCase.showDetailUseCases.GetShowSimilarUseCase
+import com.nsicyber.wciwapp.domain.useCase.showDetailUseCases.GetShowVideosUseCase
 import com.nsicyber.wciwapp.prese.ShowDetailState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -48,6 +50,7 @@ class ShowDetailScreenViewModel @Inject constructor(
     private val getShowImagesUseCase: GetShowImagesUseCase,
     private val getShowExternalIdUseCase: GetShowExternalIdUseCase,
     private val getShowSeasonDetailUseCase: GetShowSeasonDetailUseCase,
+    private val getShowVideosUseCase: GetShowVideosUseCase,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(ShowDetailState())
@@ -95,19 +98,27 @@ class ShowDetailScreenViewModel @Inject constructor(
                 is ApiResult.Error -> emptyList()
             }
         }
+        val videosFlow = getShowVideosUseCase(showId).map { result ->
+            when (result) {
+                is ApiResult.Success -> result.data?.results
+                is ApiResult.Error -> emptyList()
+            }
+        }
 
         combine(
             detailFlow,
             similarFlow,
             providersFlow,
             creditsFlow,
-            imagesFlow
+            imagesFlow,
+            videosFlow
         ) { results ->
             val details = results[0] as ShowDetailResponse?
             val similars = results[1] as List<CardViewData?>?
             val watchProviders = results[2] as ProvidersListResponseData?
             val credits = results[3] as CreditsListResponse?
             val images = results[4] as List<ImageListResponseItem?>?
+            val videos = results[5] as List<VideosListResponseItem?>?
 
             ShowDetailState(
                 isLoading = false,
@@ -115,7 +126,8 @@ class ShowDetailScreenViewModel @Inject constructor(
                 similars = similars,
                 watchProviders = watchProviders,
                 credits = credits,
-                images = images
+                images = images,
+                videos = videos
             )
         }
             .onStart { updateUiState { copy(isLoading = true) } }

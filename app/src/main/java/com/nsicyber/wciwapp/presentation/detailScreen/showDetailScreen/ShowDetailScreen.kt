@@ -8,7 +8,6 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -38,11 +37,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.draw.rotate
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -53,6 +49,9 @@ import coil.compose.AsyncImage
 import com.nsicyber.wciwapp.R
 import com.nsicyber.wciwapp.common.Constants
 import com.nsicyber.wciwapp.common.Constants.IMAGE_URL
+import com.nsicyber.wciwapp.common.Constants.IMAGE_URL_6_9
+import com.nsicyber.wciwapp.common.Constants.IMAGE_URL_ORIGINAL
+import com.nsicyber.wciwapp.common.Constants.IMAGE_URL_SHOW_DETAIL
 import com.nsicyber.wciwapp.formatDate
 import com.nsicyber.wciwapp.prese.EpisodeModel
 import com.nsicyber.wciwapp.prese.SeasonModel
@@ -64,6 +63,7 @@ import com.nsicyber.wciwapp.presentation.components.ImagesListContent
 import com.nsicyber.wciwapp.presentation.components.PaginationListContent
 import com.nsicyber.wciwapp.presentation.components.ParentGuideView
 import com.nsicyber.wciwapp.presentation.components.ProviderListContent
+import com.nsicyber.wciwapp.presentation.detailScreen.movieDetailScreen.VideoPosterView
 import com.nsicyber.wciwapp.presentation.detailScreen.movieDetailScreen.getProviderByCountryCode
 import com.nsicyber.wciwapp.primaryColor
 import com.nsicyber.wciwapp.secondaryColor
@@ -89,6 +89,7 @@ fun ShowDetailScreen(
             modifier = Modifier
                 .background(primaryColor), contentPadding = PaddingValues(bottom = 32.dp)
         ) {
+            /*
             item {
                 Box(
                     modifier = Modifier
@@ -119,13 +120,25 @@ fun ShowDetailScreen(
                 }
             }
 
+
+             */
+            item(key = "video_poster") {
+                VideoPosterView(
+                    poster = showDetailScreenState.details?.poster_path ?: "",
+                    showDetailScreenState.videos?.lastOrNull { it?.type == "Trailer" }?.key
+                )
+
+            }
+
             item {
                 Column(
-                    modifier = Modifier.padding(
-                        start = 16.dp,
-                        top = 16.dp,
-                        bottom = 8.dp, end = 16.dp
-                    )
+                    modifier = Modifier
+                        .background(primaryColor)
+                        .padding(
+                            start = 16.dp,
+                            top = 16.dp,
+                            bottom = 8.dp, end = 16.dp
+                        )
                 ) {
                     Text(
                         text = stringResource(R.string.about_show),
@@ -203,7 +216,7 @@ fun ShowDetailScreen(
                         text = (showDetailScreenState.details?.first_air_date?.formatDate() + " - " + (showDetailScreenState.details?.last_air_date?.formatDate()
                             ?: "...")),
                         color = Color.White,
-                        fontSize = 28.sp,
+                        fontSize = 28.sp, lineHeight = 32.sp,
                         textAlign = TextAlign.Start,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.fillMaxWidth()
@@ -369,9 +382,9 @@ fun SeasonCard(
 ) {
     Card(
         colors = CardDefaults.cardColors(containerColor = secondaryColor),
-        modifier = Modifier
+        modifier = Modifier   .clickable(onClick = onClick)
             .clip(RoundedCornerShape(20.dp))
-            .clickable(onClick = onClick)
+
             .padding(16.dp),
         border = if (isSelected) BorderStroke(1.dp, Color.White) else null,
         shape = RoundedCornerShape(20.dp),
@@ -451,25 +464,33 @@ fun SeasonDetailContent(
     }
 }
 
+
+
 @Composable
 fun EpisodeListItemView(
     count: Int,
     data: EpisodeModel?
 ) {
+    val hasContent = !data?.imageUrl.isNullOrEmpty() || !data?.episodeOverview.isNullOrEmpty()
+
     var isSelected by remember { mutableStateOf(false) }
     val rotationAngle by animateFloatAsState(
         targetValue = if (isSelected) 180f else 0f,
         animationSpec = tween(durationMillis = 300, easing = FastOutSlowInEasing)
     )
 
-    Column(
-        modifier = Modifier
-            .clickable { isSelected = !isSelected }
+    Column(verticalArrangement = Arrangement.spacedBy(8.dp),
+        modifier = Modifier   .let {
+            if (hasContent) {
+                it.clickable { isSelected = !isSelected }
+                    .animateContentSize(animationSpec = tween(durationMillis = 300))
+            } else it
+        }
             .fillMaxWidth()
             .clip(RoundedCornerShape(8.dp))
             .background(secondaryColor)
             .padding(12.dp)
-            .animateContentSize(animationSpec = tween(durationMillis = 300))
+
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
@@ -477,33 +498,60 @@ fun EpisodeListItemView(
                 modifier = Modifier.weight(1f),
                 color = Color.White
             )
-            Icon(
-                imageVector = Icons.Default.ArrowDropDown,
-                contentDescription = null,
-                modifier = Modifier.rotate(rotationAngle),
-                tint = Color.White
-            )
+            if (hasContent) {
+                Icon(
+                    imageVector = Icons.Default.ArrowDropDown,
+                    contentDescription = null,
+                    modifier = Modifier.rotate(rotationAngle),
+                    tint = Color.White
+                )
+            }
         }
 
-        if (isSelected) {
-            Row(modifier = Modifier.padding(top = 8.dp)) {
-                AsyncImage(
-                    model = "$IMAGE_URL${data?.imageUrl}",
-                    contentDescription = null,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clip(RoundedCornerShape(8.dp))
-                        .background(Color.LightGray)
-                        .weight(0.4f)
-                        .aspectRatio(6 / 9f)
-                )
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(
-                    text = data?.episodeOverview ?: "",
-                    modifier = Modifier.weight(0.6f),
-                    color = Color.White
-                )
+        if (isSelected && hasContent) {
+            when {
+                !data?.imageUrl.isNullOrEmpty() && !data?.episodeOverview.isNullOrEmpty() -> {
+                    Row() {
+                        AsyncImage(
+                            model = "$IMAGE_URL${data?.imageUrl}",
+                            contentDescription = "Episode Image",
+                            modifier = Modifier
+                                .weight(0.4f)
+                                .aspectRatio(6 / 9f)
+                                .clip(RoundedCornerShape(8.dp))
+                                .background(Color.LightGray)
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text(
+                            text = data?.episodeOverview ?: "",
+                            modifier = Modifier.weight(0.6f),
+                            color = Color.White
+                        )
+                    }
+                }
+
+                !data?.imageUrl.isNullOrEmpty() -> {
+                    AsyncImage(
+                        model = "$IMAGE_URL_SHOW_DETAIL${data?.imageUrl}",
+                        contentDescription = "Episode Image",
+                        modifier = Modifier
+                            .fillMaxWidth().aspectRatio(227/127f)
+                            .clip(RoundedCornerShape(8.dp))
+
+                    )
+                }
+
+                !data?.episodeOverview.isNullOrEmpty() -> {
+                    Text(
+                        text = data?.episodeOverview ?: "",
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        color = Color.White
+                    )
+                }
             }
         }
     }
 }
+
+

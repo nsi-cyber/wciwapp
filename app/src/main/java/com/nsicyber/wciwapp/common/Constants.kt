@@ -7,7 +7,8 @@ object Constants {
 
 
     val IMAGE_URL = "https://image.tmdb.org/t/p/w600_and_h900_bestv2/"
-    val IMAGE_URL_6_6 = "https://image.tmdb.org/t/p/w600_and_h900_bestv2/"
+    val IMAGE_URL_6_9 = "https://image.tmdb.org/t/p/w600_and_h900_bestv2/"
+    val IMAGE_URL_SHOW_DETAIL = "https://media.themoviedb.org/t/p/w454_and_h254_bestv2/"
     val IMAGE_URL_ORIGINAL = "https://image.tmdb.org/t/p/original/"
     val IMAGE_URL_PROFILE = "https://media.themoviedb.org/t/p/w276_and_h350_face/"
     val YOUTUBE_THUMB_URL = "https://i.ytimg.com/vi/${1}/hqdefault.jpg"
@@ -44,6 +45,7 @@ object Constants {
         const val SHOW_SIMILAR = "tv/{showId}/similar"
         const val SHOW_PROVIDERS = "tv/{showId}/watch/providers"
         const val SHOW_EXTERNAL_ID = "tv/{showId}/external_ids"
+        const val SHOW_VIDEOS = "tv/{showId}/videos"
 
         const val TOP_RATED_SHOWS = "tv/top_rated"
         const val DISCOVER_TV = "discover/tv"

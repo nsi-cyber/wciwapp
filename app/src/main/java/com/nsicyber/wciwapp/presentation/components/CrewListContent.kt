@@ -87,9 +87,9 @@ fun CrewCard(
     ) {
 
     Column(
-        modifier = Modifier
+        modifier = Modifier.clickable { onPersonDetailClicked(crew?.id?:0) }
             .fillMaxHeight()
-            .width(120.dp).clickable { onPersonDetailClicked(crew?.id?:0) },
+            .width(120.dp),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

@@ -34,13 +34,13 @@ fun MovieCard(
 ) {
 
     Box(contentAlignment = Alignment.Center,
-        modifier = modifier
+        modifier = modifier    .clickable {
+            onItemClick(movie?.id ?: -1)
+        }
             .shadow(5.dp, RoundedCornerShape(10.dp))
             .clip(RoundedCornerShape(10.dp))
             .aspectRatio(4 / 5f)
-            .clickable {
-                onItemClick(movie?.id ?: -1)
-            }
+
 
 
     ) {

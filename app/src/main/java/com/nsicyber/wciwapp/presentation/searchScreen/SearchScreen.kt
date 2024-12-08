@@ -222,9 +222,9 @@ fun SearchInputField(
             )
 
             Icon(
-                modifier = Modifier
+                modifier = Modifier  .clickable { onClearQuery() }
                     .size(24.dp)
-                    .clickable { onClearQuery() },
+                  ,
                 imageVector = if(query.isNotEmpty()) Icons.Default.Clear else Icons.Default.Search,
                 contentDescription = "Clear Icon",
                 tint = Color.Black
@@ -240,13 +240,13 @@ fun SearchCard(
 ) {
 
     Row(
-        modifier = Modifier
+        modifier = Modifier    .clickable {
+            onItemClick(data)
+        }
             .height(100.dp)
             .clip(RoundedCornerShape(10.dp))
             .fillMaxWidth()
-            .clickable {
-                onItemClick(data)
-            }
+
             .padding(bottom = 16.dp)
 
 
@@ -370,9 +370,9 @@ fun KeywordCardItem(
     Card(
         colors = CardDefaults.cardColors(containerColor = secondaryColor),
         //   backgroundColor = secondaryColor,
-        modifier = modifier
+        modifier = modifier     .clickable { onClick(data?.id) }
             .clip(RoundedCornerShape(50.dp))
-            .clickable { onClick(data?.id) }
+
             .padding(4.dp),
         shape = RoundedCornerShape(50.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),

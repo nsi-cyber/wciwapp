@@ -45,7 +45,9 @@ fun TrendingSection(
 
         Box(
             contentAlignment = Alignment.Center,
-            modifier = Modifier
+            modifier = Modifier.clickable {
+                onSearchClicked()
+            }
                 .height(50.dp)
                 .fillMaxWidth()
                 .padding(horizontal = 24.dp)
@@ -53,9 +55,7 @@ fun TrendingSection(
                 .clip(RoundedCornerShape(8.dp))
                 .background(Color.White)
                 .align(Alignment.BottomCenter)
-                .clickable {
-                    onSearchClicked()
-                }
+
         ) {
             Row(
                 modifier = Modifier

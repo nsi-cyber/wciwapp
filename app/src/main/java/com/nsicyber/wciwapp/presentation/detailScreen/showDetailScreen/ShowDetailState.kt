@@ -4,6 +4,7 @@ import com.nsicyber.wciwapp.data.remote.response.creditsList.CreditsListResponse
 import com.nsicyber.wciwapp.data.remote.response.imageList.ImageListResponseItem
 import com.nsicyber.wciwapp.data.remote.response.providersList.ProvidersListResponseData
 import com.nsicyber.wciwapp.data.remote.response.showDetail.ShowDetailResponse
+import com.nsicyber.wciwapp.data.remote.response.videosList.VideosListResponseItem
 import com.nsicyber.wciwapp.domain.model.CardViewData
 import com.nsicyber.wciwapp.domain.model.ParentalGuideCategoryList
 
@@ -32,7 +33,8 @@ data class ShowDetailState(
     val images: List<ImageListResponseItem?>? = null,
     val watchProviders: ProvidersListResponseData? = null,
     val similars: List<CardViewData?>? = null,
-    val seasonList: List<SeasonModel>? = null
+    val seasonList: List<SeasonModel>? = null,
+    val videos: List<VideosListResponseItem?>? = null
 )
 
 

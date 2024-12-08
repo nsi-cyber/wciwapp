@@ -12,6 +12,7 @@ import com.nsicyber.wciwapp.data.remote.response.providersList.ProvidersListResp
 import com.nsicyber.wciwapp.data.remote.response.showExternalId.ExternalIdResponse
 import com.nsicyber.wciwapp.data.remote.response.showSeasonDetail.ShowSeasonDetailResponse
 import com.nsicyber.wciwapp.data.remote.response.showSimilarList.ShowSimilarListResponse
+import com.nsicyber.wciwapp.data.remote.response.videosList.VideosListResponse
 import com.nsicyber.wciwapp.domain.repository.NetworkRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
@@ -62,6 +63,10 @@ class NetworkRepositoryImpl @Inject constructor(private val apiService: ApiServi
 
     override suspend fun getShowDetail(showId: Int) = apiFlow {
         apiService.getShowDetail(showId)
+    }
+
+    override suspend fun getShowVideos(showId: Int?): Flow<ApiResult<VideosListResponse?>> = apiFlow {
+        apiService.getShowVideos(showId)
     }
 
     override suspend fun getShowProviders(showId: Int?): Flow<ApiResult<ProvidersListResponse?>> =

@@ -1,6 +1,7 @@
 package com.nsicyber.wciwapp.presentation.detailScreen.movieDetailScreen
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -16,10 +17,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -41,6 +46,7 @@ import com.nsicyber.wciwapp.presentation.components.PaginationListContent
 import com.nsicyber.wciwapp.presentation.components.ParentGuideView
 import com.nsicyber.wciwapp.presentation.components.ProviderListContent
 import com.nsicyber.wciwapp.primaryColor
+import kotlinx.coroutines.launch
 
 
 @Composable
@@ -58,14 +64,26 @@ fun MovieDetailScreen(
     }
 
 
+
+
+
     BaseView(isPageLoading = movieDetailScreenState.isLoading, content = {
         LazyColumn(
             modifier = Modifier
                 .background(primaryColor), contentPadding = PaddingValues(bottom = 32.dp)
         ) {
+
+
+
+
+            item(key = "video_poster") {VideoPosterView(poster = movieDetailScreenState.details?.poster_path?:"",movieDetailScreenState.videos?.lastOrNull { it?.type=="Trailer" }?.key)
+
+            }
+/*
             item {
                 Box(
                     modifier = Modifier
+
                         .fillMaxSize()
                         .aspectRatio(6 / 9f)
                 ) {
@@ -94,10 +112,15 @@ fun MovieDetailScreen(
             }
 
 
+
+
+ */
+
+
             item {
                 Column(
-                    modifier = Modifier.padding(
-                        start = 16.dp, top = 16.dp, bottom = 8.dp, end = 16.dp
+                    modifier = Modifier.background(primaryColor).padding(
+                        start = 16.dp, top = 32.dp, bottom = 8.dp, end = 16.dp
                     )
                 ) {
                     Text(

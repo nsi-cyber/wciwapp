@@ -469,11 +469,11 @@ fun PersonCastCreditCard(
 ) {
 
     Row(modifier = modifier
-        .width(330.dp)
-
         .clickable {
             onItemClick(data?.id ?: -1)
         }
+        .width(330.dp)
+
 
 
     ) {
@@ -543,11 +543,11 @@ fun PersonCrewCreditCard(
 ) {
 
     Row(modifier = modifier
-        .width(330.dp)
-
         .clickable {
             onItemClick(data?.id ?: -1)
         }
+        .width(330.dp)
+
 
 
     ) {

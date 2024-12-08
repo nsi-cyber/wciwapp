@@ -37,6 +37,8 @@ interface NetworkRepository {
 
     suspend fun getShowCredits(showId: Int?): Flow<ApiResult<CreditsListResponse?>>
     suspend fun getShowDetail(showId: Int): Flow<ApiResult<ShowDetailResponse?>>
+    suspend fun getShowVideos(showId: Int?): Flow<ApiResult<VideosListResponse?>>
+
     suspend fun getShowProviders(showId: Int?): Flow<ApiResult<ProvidersListResponse?>>
     suspend fun getShowImages(showId: Int?): Flow<ApiResult<ImageListResponse?>>
     suspend fun getShowSimilar(showId: Int?): Flow<ApiResult<ShowSimilarListResponse?>>
