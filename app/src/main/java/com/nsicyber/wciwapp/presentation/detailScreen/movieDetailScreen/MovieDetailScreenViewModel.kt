@@ -13,6 +13,7 @@ import com.nsicyber.wciwapp.data.remote.response.providersList.ProviderItemData
 import com.nsicyber.wciwapp.data.remote.response.providersList.ProvidersListResponseData
 import com.nsicyber.wciwapp.data.remote.response.videosList.VideosListResponseItem
 import com.nsicyber.wciwapp.domain.model.CardViewData
+import com.nsicyber.wciwapp.domain.useCase.GetParentalGuideUseCase
 import com.nsicyber.wciwapp.domain.useCase.movieDetailUseCases.GetMovieCreditsUseCase
 import com.nsicyber.wciwapp.domain.useCase.movieDetailUseCases.GetMovieDetailUseCase
 import com.nsicyber.wciwapp.domain.useCase.movieDetailUseCases.GetMovieImagesUseCase
@@ -47,6 +48,7 @@ class MovieDetailScreenViewModel @Inject constructor(
     private val getMovieProvidersUseCase: GetMovieProvidersUseCase,
     private val getMovieCreditsUseCase: GetMovieCreditsUseCase,
     private val getMovieImagesUseCase: GetMovieImagesUseCase,
+    private val getParentalGuideUseCase: GetParentalGuideUseCase,
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(MovieDetailState())
@@ -131,33 +133,18 @@ class MovieDetailScreenViewModel @Inject constructor(
 
     private fun getParentalGuide(imdbId: String?) {
         viewModelScope.launch {
-            flow {
-                val document = withContext(Dispatchers.IO) {
-                    Jsoup.connect("https://www.imdb.com/title/$imdbId/parentalguide/")
-                        .timeout(5000)
-                        //.proxy("85.221.249.213", 8080)
-                        .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36")
-                        .get()
+            getParentalGuideUseCase(imdbId)
+                .onStart {
+                    updateUiState { copy(isLoading = true) }
                 }
-                emit(document)
-            }.onStart {
-                updateUiState { copy(isLoading = true) }
-            }.onEach { document ->
-                val jsonData =
-                    document.select("script[type=application/json]").firstOrNull()?.data()
-
-                jsonData?.let {
-                    val parentalGuideData = parseParentalData(it)
-                    parentalGuideData.let { data ->
-                        updateUiState { copy(parentalGuide = data) }
+                .collect { result ->
+                    result.onSuccess { data ->
+                        updateUiState { copy(parentalGuide = data, isLoading = false) }
+                    }.onFailure {
+                        it.printStackTrace()
+                        updateUiState { copy(isLoading = false) }
                     }
                 }
-            }.catch { e ->
-                e.printStackTrace()
-                updateUiState { copy(isLoading = false) }
-            }.onCompletion {
-                updateUiState { copy(isLoading = false) }
-            }.launchIn(this)
         }
     }
 

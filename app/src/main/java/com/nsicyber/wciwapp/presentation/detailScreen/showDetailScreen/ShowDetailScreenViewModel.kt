@@ -12,6 +12,7 @@ import com.nsicyber.wciwapp.data.remote.response.showDetail.ShowDetailResponse
 import com.nsicyber.wciwapp.data.remote.response.showSeasonDetail.toSeasonModel
 import com.nsicyber.wciwapp.data.remote.response.videosList.VideosListResponseItem
 import com.nsicyber.wciwapp.domain.model.CardViewData
+import com.nsicyber.wciwapp.domain.useCase.GetParentalGuideUseCase
 import com.nsicyber.wciwapp.domain.useCase.showDetailUseCases.GetShowCreditsUseCase
 import com.nsicyber.wciwapp.domain.useCase.showDetailUseCases.GetShowDetailUseCase
 import com.nsicyber.wciwapp.domain.useCase.showDetailUseCases.GetShowExternalIdUseCase
@@ -51,7 +52,9 @@ class ShowDetailScreenViewModel @Inject constructor(
     private val getShowExternalIdUseCase: GetShowExternalIdUseCase,
     private val getShowSeasonDetailUseCase: GetShowSeasonDetailUseCase,
     private val getShowVideosUseCase: GetShowVideosUseCase,
-) : ViewModel() {
+    private val getParentalGuideUseCase: GetParentalGuideUseCase,
+
+    ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(ShowDetailState())
     val uiState: StateFlow<ShowDetailState> = _uiState.asStateFlow()
@@ -190,29 +193,18 @@ class ShowDetailScreenViewModel @Inject constructor(
 
     private fun getParentalGuide(imdbId: String?) {
         viewModelScope.launch {
-            flow {
-                val document = withContext(Dispatchers.IO) {
-                    Jsoup.connect("https://www.imdb.com/title/$imdbId/parentalguide/").get()
+            getParentalGuideUseCase(imdbId)
+                .onStart {
+                    updateUiState { copy(isLoading = true) }
                 }
-                emit(document)
-            }.onStart {
-                updateUiState { copy(isLoading = true) }
-            }.onEach { document ->
-                val jsonData =
-                    document.select("script[type=application/json]").firstOrNull()?.data()
-
-                jsonData?.let {
-                    val parentalGuideData = parseParentalData(it)
-                    parentalGuideData.let { data ->
-                        updateUiState { copy(parentalGuide = data) }
+                .collect { result ->
+                    result.onSuccess { data ->
+                        updateUiState { copy(parentalGuide = data, isLoading = false) }
+                    }.onFailure {
+                        it.printStackTrace()
+                        updateUiState { copy(isLoading = false) }
                     }
                 }
-            }.catch { e ->
-                e.printStackTrace()
-                updateUiState { copy(isLoading = false) }
-            }.onCompletion {
-                updateUiState { copy(isLoading = false) }
-            }.launchIn(this)
         }
     }
 

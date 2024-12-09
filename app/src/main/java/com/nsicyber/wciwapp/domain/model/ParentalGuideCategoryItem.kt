@@ -1,8 +1,8 @@
 package com.nsicyber.wciwapp.domain.model
 
 data class ParentalGuideCategoryItem(
-    val categoryType: ParentGuideCategoryType?,
-    val severityType: ParentGuideSeverityType?,
-    val severityPercentage: Int?,
-    var userComments: List<String?>
+    val categoryType: ParentGuideCategoryType?=null,
+    val severityType: ParentGuideSeverityType?=null,
+    val severityPercentage: Int?=null,
+    var userComments: List<String?> = listOf()
 )

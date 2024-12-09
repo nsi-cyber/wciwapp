@@ -107,6 +107,8 @@ dependencies {
     implementation("com.orhanobut:hawk:2.0.1")
     implementation("net.engawapg.lib:zoomable:1.6.2")
     implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.1")
+    implementation("com.google.firebase:firebase-database-ktx")
+
 
 
 }

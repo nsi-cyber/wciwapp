@@ -56,7 +56,7 @@ interface ApiService {
     @GET(Constants.Endpoints.MOVIE_VIDEOS)
     suspend fun getMovieVideos(
         @Path("movieId") movieId: Int?,
-        @Query("language") language: String = Constants.BASE_LANGUAGE
+      //  @Query("language") language: String = Constants.BASE_LANGUAGE
     ): Response<VideosListResponse?>
 
     @GET(Constants.Endpoints.MOVIE_PROVIDERS)
@@ -171,7 +171,7 @@ interface ApiService {
     @GET(Constants.Endpoints.SHOW_VIDEOS)
     suspend fun getShowVideos(
         @Path("showId") showId: Int?,
-        @Query("language") language: String = Constants.BASE_LANGUAGE
+       // @Query("language") language: String = Constants.BASE_LANGUAGE
     ): Response<VideosListResponse?>
 
 
