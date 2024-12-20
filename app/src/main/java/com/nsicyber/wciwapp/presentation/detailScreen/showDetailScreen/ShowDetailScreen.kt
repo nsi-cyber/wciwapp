@@ -198,7 +198,7 @@ fun ShowDetailScreen(
 
             item {
                 Column(
-                    modifier = Modifier.padding(
+                    modifier = Modifier.background(primaryColor).padding(
                         start = 16.dp,
                         top = 16.dp,
                         bottom = 8.dp

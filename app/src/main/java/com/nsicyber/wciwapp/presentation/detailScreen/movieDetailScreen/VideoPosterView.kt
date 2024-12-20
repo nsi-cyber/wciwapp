@@ -140,7 +140,6 @@ fun VideoPosterView(
 
                         this.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
                             override fun onReady(youTubePlayer: YouTubePlayer) {
-
                                 youTubePlayerState.value = youTubePlayer
                                 youTubePlayer.cueVideo(trailer, 0f)
                             }
@@ -186,7 +185,7 @@ fun VideoPosterView(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.spacedBy(2.dp)
             ) {
-                Icon(
+                Icon(tint =Color.White ,
                     painter = painterResource(if (isPlaying.value) R.drawable.ic_pause else R.drawable.ic_play),
                     contentDescription = "Start Stop",
                     modifier = Modifier

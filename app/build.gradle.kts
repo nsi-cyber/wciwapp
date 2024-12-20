@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.daggerHilt)
     id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -15,13 +16,10 @@ android {
         applicationId = "com.nsicyber.wciwapp"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
-
+        versionCode = 3
+        versionName = "0.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
         buildConfigField("String", "API_URL", "\"https://api.themoviedb.org/3/\"")
-
     }
 
 
@@ -103,12 +101,13 @@ dependencies {
     implementation(libs.accompanist.swiperefresh)
     implementation(libs.lottie.compose)
     implementation(kotlin("reflect"))
-    implementation("org.jsoup:jsoup:1.12.1")
-    implementation("com.orhanobut:hawk:2.0.1")
-    implementation("net.engawapg.lib:zoomable:1.6.2")
-    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.1")
-    implementation("com.google.firebase:firebase-database-ktx")
-
+    implementation(libs.jsoup)
+    implementation(libs.hawk)
+    implementation(libs.zoomable)
+    implementation(libs.core)
+    implementation(libs.google.firebase.database.ktx)
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.analytics)
 
 
 }
