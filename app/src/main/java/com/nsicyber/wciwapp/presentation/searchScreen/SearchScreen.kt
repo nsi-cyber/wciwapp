@@ -35,6 +35,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -74,7 +75,10 @@ fun SearchScreen(
 
     LaunchedEffect(Unit) {
         searchScreenViewModel.onEvent(SearchScreenEvent.LoadSearchScreen)
-        focusRequester.requestFocus()
+        snapshotFlow { focusRequester }
+            .collect {
+                focusRequester.requestFocus()
+            }
     }
 
     BaseView(isPageLoading = uiState.isLoading, content = {
