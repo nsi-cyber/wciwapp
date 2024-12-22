@@ -1,3 +1,7 @@
+
+![Web_Photo_Editor](https://github.com/user-attachments/assets/53492aed-60f7-4ee3-899e-79c97bf4d693)
+
+
 # What Can I Watch? (WCIW)
 
 **What Can I Watch?** (WCIW) is a mobile application designed to help users discover movies and TV series, explore parental guides, and find streaming providers available in their country. The project is developed using **Clean Architecture** and **MVVM (Model-View-ViewModel)** principles to ensure scalability, maintainability, and testability.
