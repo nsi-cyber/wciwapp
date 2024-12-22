@@ -67,8 +67,6 @@ Streaming Providers
 Users can discover streaming providers based on their location.
 Links are dynamically generated for each movie or show.
 🧩 Project Structure
-graphql
-Kodu kopyala
 📂 wciwapp
 ├── 📂 app
 │   ├── 📂 data       # Data sources, repositories, and models
@@ -76,6 +74,7 @@ Kodu kopyala
 │   ├── 📂 presentation # ViewModels and Compose screens
 │   ├── 📂 di         # Dependency Injection setup
 │   ├── 📂 utils      # Utility classes and extensions
+
 💡 Future Plans
 Dark Mode Support.
 Integration with more streaming services.
