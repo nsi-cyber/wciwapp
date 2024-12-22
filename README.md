@@ -66,32 +66,6 @@ Turkish (tr-TR), and more.
 Streaming Providers
 Users can discover streaming providers based on their location.
 Links are dynamically generated for each movie or show.
-🧩 Project Structure
-📂 wciwapp
-├── 📂 app
-│   ├── 📂 data       # Data sources, repositories, and models
-│   ├── 📂 domain     # Use cases and business logic
-│   ├── 📂 presentation # ViewModels and Compose screens
-│   ├── 📂 di         # Dependency Injection setup
-│   ├── 📂 utils      # Utility classes and extensions
 
-💡 Future Plans
-Dark Mode Support.
-Integration with more streaming services.
-Advanced filtering and sorting options.
-Push notifications for new movie/show releases.
-🤝 Contribution
-Contributions are welcome! Please follow these steps:
 
-Fork the repository.
-Create a new branch (git checkout -b feature-branch).
-Commit your changes (git commit -m 'Add feature').
-Push to the branch (git push origin feature-branch).
-Open a Pull Request.
-📧 Contact
-For inquiries, feel free to reach out:
 
-Email: support@wciwapp.com
-GitHub Issues: Report Bugs
-📜 License
-This project is licensed under the MIT License. See the LICENSE file for details.
