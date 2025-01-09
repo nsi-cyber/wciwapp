@@ -16,8 +16,8 @@ android {
         applicationId = "com.nsicyber.wciwapp"
         minSdk = 26
         targetSdk = 34
-        versionCode = 4
-        versionName = "0.1.1"
+        versionCode = 5
+        versionName = "0.5.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "API_URL", "\"https://api.themoviedb.org/3/\"")
     }
